@@ -19,6 +19,12 @@ cd ~/ros2_industrial_ws/src/ROS2_industrial/3_navigation/patch_turtlebot4_simula
 ./unpatch.bash
 ```
 
+set in /home/student/turtlebot_ws/src/turtlebot4_simulator/turtlebot4_gz_bringup/worlds/warehouse.sdf
+max_sep_size to 0.1
+```
+<max_step_size>0.1</max_step_size>
+```
+
 
 Bekijken van de omgeving
 ```bash
@@ -26,11 +32,11 @@ ros2 launch turtlebot4_gz_bringup turtlebot4_gz.launch.py
 ```
 
 ```bash
-ros2 launch turtlebot4_gz_bringup turtlebot4_gz.launch.py world:maze
+ros2 launch turtlebot4_gz_bringup turtlebot4_gz.launch.py world:=maze
 ```
 
 ```bash
-ros2 launch turtlebot4_gz_bringup turtlebot4_gz.launch.py world:depot
+ros2 launch turtlebot4_gz_bringup turtlebot4_gz.launch.py world:=depot
 ```
 
 
