@@ -94,7 +94,7 @@ ros2 launch urdf_basics visualize_assignment3.launch.py
 
 Nog invullen!!!!
 
-Z|oek de fout in een urdf bestand
+Zoek de fout in een urdf bestand
 ... bash
 cd ROS2_industrial/2_urdf/urdf_basics/urdf
 xacro assignment1.urdf.xacro > assignment1.urdf
