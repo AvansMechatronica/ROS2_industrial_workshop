@@ -22,6 +22,13 @@ ros2 launch manipulation_moveit_config setup_assistant.launch.py
 ```
 
 ## Opdracht 1
+Maken nieuwe moevit configuratie
+Testen nieuwe moveit configuratie
+
+
+
+
+## Opdracht 1
 ```bash
 ros2 launch manipulation environment.launch.py
 ```
