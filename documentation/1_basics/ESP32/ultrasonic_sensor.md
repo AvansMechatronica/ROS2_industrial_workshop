@@ -31,3 +31,5 @@ Nadat het device is geprogrammeerd kun je de werking controlleren met;
 ros2 topic echo /sensor_info
 ```
 {octicon}`alert;2em;sd-text-info` Je dient wel eertst de microROS-agent te starten. 
+
+[Brief instructions programming ESP32 devices with VisualCode/Platform IO](instructions_programming_esp32.md)
