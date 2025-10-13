@@ -20,7 +20,6 @@ Welcome to Avans ROS2 Industrial Workshop
    1_basics/basics
    2_urdf/urdf
    3_navigation/navigation
-   4_manipulation/manipulation
    5_transferframes/transferframes
    references/references
 

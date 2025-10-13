@@ -1,4 +1,4 @@
-# ROS2 urdf
+# ROS2 URDF Workshop
 
 
 In deze workshop leer je een aantal technieken om zelf realistische simulatie omgeving te bouwen.
