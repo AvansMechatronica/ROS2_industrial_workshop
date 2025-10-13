@@ -6,5 +6,6 @@ ROS2 Manipulation Workshop
    :maxdepth: 2
    :caption: Contents:
 
-   manipulation.md
+   manipulation_config.md
+   manipulation_planning.md
 
