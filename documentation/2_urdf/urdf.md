@@ -22,6 +22,7 @@ Voeg je urdf-xml code toe achter de regel:
 ```
 <!-- Add your solution to assignment 1 here -->
 ```
+Tip: Maak eerst door een <xacro>(zie regel 28 als voorbeeld) tag een bin_2_ aan en vervolgens met een <joint> een verbinding met de world_interface. Je kunt bin_1 gebruiken als voorbeeld.
 
 Start assignment 1
 ```bash
@@ -91,15 +92,32 @@ ros2 launch urdf_basics visualize_assignment3.launch.py
 
 
 ## Opdracht 4
+In deze opdracht leer je een fout in een urdf- of xacro-bestand te zoeken en op te lossen.
 
-Nog invullen!!!!
+Start assignment 4
+```bash
+ros2 launch urdf_basics visualize_assignment4.launch.py
+```
+Je zult zien dat er een foutmelding optreed. Je kunt de oorzaak van de fout op sporen door de volgende twee stappen:
+* xacro-bestand omzetten naar een urdf-bestand
+    * Let op: Dit hoeft niet te gebeuren als je al een urdf-bestand hebt.
+* Met het commando "check_urdf" een controlle op het urdf-bestand uitvoeren
 
-Zoek de fout in een urdf bestand
-... bash
-cd ROS2_industrial/2_urdf/urdf_basics/urdf
-xacro assignment1.urdf.xacro > assignment1.urdf
-check_urdf assignment1.urdf
+Zorg dat je in de juiste directory bent:
+``` bash
+cd ~/ros2_industrial_ws/src/ROS2_industrial/2_urdf/urdf_basics/urdf
+```
 
-````
+Met onderstaand commado kun je een .xacro bestand omzetten naar een .urdf bestand en vervolgens controleren op fouten.
+``` bash
+xacro assignment4.urdf.xacro > assignment4.urdf
+```
 
+Controlleer het urdf-bestand op fouten met het commando:
+``` bash
+check_urdf assignment4.urdf
+```
+De foutmelding die je krijgt, geeft een aanwijzing over de oorzaak van de fout. Zoek de fout in het *"assignment4.urdf.xacro"* bestand en los deze op.
+
+Let op: Het gegenereerde urdf-bestand hoeft niet aangepast te worden, alleen het xacro-bestand.
 
