@@ -1,4 +1,4 @@
-# ROS2 industrial manipulation
+# ROS2 industrial manipulation setup
 
 In deze module leer je hoe je een robotarm kunt besturen met behulp van ROS2. We gebruiken de UFactory xarm6 robotarm in combinatie met een vacuum grijper.
 
