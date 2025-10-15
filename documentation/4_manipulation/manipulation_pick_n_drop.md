@@ -57,7 +57,7 @@ De robot moet de volgende stappen uitvoeren:
 8. Sluit het programma af
 
 Instructies:
-1. Pas het pyhton script "assignament2.py" van de package manipulation aan op de plaatsen van Todo 1.
+1. Pas het pyhton script "assignament2.py" van de package manipulation aan op de plaatsen van TODO 1.
 2. Voeg de "assignament2.py" aan de setup.py van de pacakge manipulation toe zodat deze als een commando kan worden uitgevoerd.
 3. Start de simulatie omgeving zoals hierboven beschreven.
 4. Run het script met het volgende commando:
@@ -86,7 +86,7 @@ In het script is een al voorbereide class VacuumGripper(Node) gemaakt. Deze clas
 - pull(): stuurt een specefieke waarde het topic van de gripper om deze te activeren
 - release(): stuurt een specefieke waarde het topic van de gripper om deze te deactiveren
 
-Voeg aan het script bij de Todo 2's de code aan om: de gripper te laten functioneren.
+Voeg aan het script bij de TODO 2's de code aan om: de gripper te laten functioneren.
 
 Test je script en kijk of de robot de battery  oppakt en in de bak laat vallen.
 
