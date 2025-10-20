@@ -18,6 +18,15 @@ Raadpleeg de volgende illustraties. De rode pijl geeft aan waar je de bol moet p
 ![Image](./images/assignment2_arrow_top_view.jpg)
 :::
 ::::
+
+Bewerk daartoe het *"assignment1.urdf.xacro"* bestand in de package urdf_basics van 2_urdf directory.
+Voeg je urdf-xml code toe achter de regel:
+
+```
+<!-- Add your solution to assignment 1 here -->
+```
+Tip: Maak eerst door een <xacro>(zie regel 28 als voorbeeld) tag een bin_2_ aan en vervolgens met een <joint> een verbinding met de world_interface. Je kunt bin_1 gebruiken als voorbeeld.
+
 Start assignment 1
 ```bash
 ros2 launch urdf_basics visualize_assignment1.launch.py
@@ -37,13 +46,7 @@ Plaats een bin(bak) op de hieronder aangegeven plaats.
 ::::
 
 
-Bewerk daartoe het *"assignment1.urdf.xacro"* bestand in de package urdf_basics van 2_urdf directory.
-Voeg je urdf-xml code toe achter de regel:
 
-```
-<!-- Add your solution to assignment 1 here -->
-```
-Tip: Maak eerst door een <xacro>(zie regel 28 als voorbeeld) tag een bin_2_ aan en vervolgens met een <joint> een verbinding met de world_interface. Je kunt bin_1 gebruiken als voorbeeld.
 
 
 

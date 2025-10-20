@@ -62,11 +62,22 @@ Druk deze lijst vervolgens af met behulp van de volgende functie:
 self.get_logger().info()
 ```
 
-### 5.3 Maak de basis robot bewegingen
+Test het script.
 
-### 5.4 Beweeg naar de opjecten
+### 5.3 Maak de basis robot bewegingen
+Vul in het assignment1.py script de TODO's 2 aan zodanig dat de robot de basis bewegingen maakt. Er wordt nog niet bewogen naar de objecten op de tafel. Test het script.
+
+### 5.4 Beweeg naar de objecten
+Vul in het assignment1.py script de TODO's 3 aan zodanig dat de robot naar de objecten beweegt, zonder dat de objecten worden opgepakt. 
+maak gebruik van de volgende tussenstappen 
+1. Beweeg naar een pre-grasp positie boven het object (0,2 m hoger dan het object)
+2. Beweeg naar de object positie
+3. Beweeg terug naar de pre-grasp positie(0,2 m hoger dan het object)
+
+Test het script.
 
 ### 5.5 Pak de objecten op en laat ze in de bak vallen
+Vul in het assignment1.py script de TODO's 4 aan zodanig dat de robot de objecten oppakt en in de bak laat vallen. De vacuum-grijper is al geïmplementeerd in de class "self.vacuum_gripper. Test het script.
 
 ### 5.6 Verbeter je programma
 Maak een functie zoals hier beschreven.
@@ -74,44 +85,4 @@ Maak een functie zoals hier beschreven.
 def move_to_object(self, part, z_offset = 0.0):
     pass
 ```
-
-Extra opmerkinge:
-De gripper is al in de class X gimplementeerd
-
-
-
-## Commando's
-Under contruction
-
-
-
-[![PickAndPlace Demo](https://img.youtube.com/vi/-zZXw-iZUTo/0.jpg)](https://www.youtube.com/watch?v=-zZXw-iZUTo "PickAndPlace Demo")
-
-Bekijken van de omgeving
-```bash
-ros2 launch transferframes view_environment.launch.py
-```
-
-Starten bestaande moveit-configuratie met setup assistant
-```bash
-ros2 launch transferframes_moveit_config setup_assistant.launch.py 
-```
-
-```bash
-ros2 launch ros_industrial_gazebo spawn_parts.launch.py
-```
-
-```bash
-ros2 launch ros_industrial_gazebo spawn_part_random.launch.py
-```
-
-starten opdracht 1
-```bash
-ros2 run transferframes assignment1 
-```
-
-view-frames
-```bash
-ros2 run tf2_tools view_frames
-```
-Daarna pdf openen via project navigator
+Deze functie moet de robot naar een object bewegen met een optionele z-offset. Gebruik deze functie in plaats van de code die je eerder hebt geschreven om naar de objecten te bewegen. Test het script.
