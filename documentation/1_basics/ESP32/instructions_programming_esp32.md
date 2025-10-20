@@ -1,11 +1,11 @@
 # Brief instructions programming ESP32 devices with VisualCode/Platform IO
 
-In this chapter the most important functions of programming an ESP32 device wit Visual Code and the PlatformIO plugin are described.
+In this chapter the most important functions of programming an ESP32 device with Visual Code and the PlatformIO plugin are described.
 
 1. Start Visual code
-2. Enable PlatfomIO environment(see: Visual Code/PlatfomIO documentation)
+2. Enable PlatformIO environment (see: Visual Code/PlatformIO documentation)
     * [Visual Code docs](https://code.visualstudio.com/docs)
-    * [PlatfomIO code](https://docs.platformio.org/en/latest/core/index.html)
+    * [PlatformIO docs](https://docs.platformio.org/en/latest/core/index.html)
 3. Select ESP32 workspace:
     * __File-->Open Workspace from File...-->esp32.code-workspace__ (in the ESP32 folder of this repository)
 

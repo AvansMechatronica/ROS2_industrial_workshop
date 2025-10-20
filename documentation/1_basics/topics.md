@@ -4,7 +4,7 @@ In deze workshop leer je de basis van ROS2 topics. De theorie hiervan wordt gedo
 
 ![Image](https://docs.ros.org/en/jazzy/_images/Topic-SinglePublisherandSingleSubscriber.gif)
 
-We gaan in deze en volgende workshops aan de slag met een hoogte meting van dozen op een conveyor(transportband), zie afbeelding hieronder.
+We gaan in deze en volgende workshops aan de slag met een hoogte meting van dozen op een conveyor(transportband), zie afbeelding hieronder. 
 
 ![Image](../images/conveyor_with_packges.jpg)
 
@@ -26,7 +26,7 @@ ros2 run range_sensor sensor_info_publisher_simulation
 :::
 
 :::{tab-item} Realworld
-De sensor waardes worden genereert met een ultrasoonsensor die aangesloten is op een ESP32-board(Embedded System). Dit staat beschreven in: [ESP32 ultatrasonic-sensor](./ESP32/ultrasonic_sensor.md)
+De sensor waardes worden gegenereert met een ultrasoonsensor die aangesloten is op een ESP32-board(Embedded System). Dit staat beschreven in: [ESP32 ultatrasonic-sensor](./ESP32/ultrasonic_sensor.md)
 
 :::
 
@@ -58,11 +58,11 @@ Informatie opvragen over het gebruik van de topic
 ros2 topic info /sensor_info
 ```
 Je vindt hierin de volgende informatie
-* Bericht type ook wel interface of message-type genoemd
+* Bericht type, ook wel "interface" genoemd in ROS2 (waarbij "interface" verwijst naar berichten, services en acties), of message-type genoemd
 * Aantal nodes dat publiceren op dit topic
 * Aantal nodes dat lezen van dit topic
 
-Informatie opvragen over het bericht type, ook wel interface genoemd
+In ROS2 verwijst "interface" naar berichten (messages), services en acties; met het onderstaande commando vraag je specifiek de definitie van het bericht (message type) op.
 ```bash
 ros2 interface show range_sensors_interfaces/msg/SensorInformation
 ```
@@ -89,13 +89,13 @@ Opmerking: als gedit nog niet is geinstalleerd dan kun je dat als volgt doen:
 sudo apt install gedit
 ```
 ## Opdracht 1.1 creëer een Python subscriber
-Maak op een subscriber aan met de vogende gegevens:
+Maak een subscriber aan met de volgende gegevens:
 * Topic: /sensor_info
 * Message-type: SensorInformation
 * Callback: sensor_info_callback
 
-Noem de subscriber 'sensor_info_subscription', zorg ervoor dat dit in de context van de klasse gebeurt, door de *self* operator.
-Voer de code in onder onderstaande regel in het assignment1.py bestand
+Noem de subscriber 'sensor_info_subscription' en wijs deze toe aan `self.sensor_info_subscription` binnen de constructor of een methode van de klasse, zodat de subscriber in de context van het object wordt aangemaakt.
+Voer de code in onder onderstaande regel in het assignment1.py bestand, binnen de constructor (`__init__` methode) van de klasse:
 
 ```
 #<Assignment 1.1, creëer hier de subscriber op het topic /sensor_info>*
@@ -116,7 +116,7 @@ Voer de code in onder onderstaande regel in het assignment1.py bestand
 #<Assignment 1.2, bereken hier de hoogte van het object>*
 ```
 
-Let op: Volgens het gegevensblad van de sensor meet de sensor tot 2.0 meter, echer metingen groter dan 1.9 meter zijn zeer onderheving aan ruis en kunnen z.g.n. false-positive metingen opleveren. Houd hiermee rekening in je berekening.
+Let op: Volgens het gegevensblad van de sensor meet de sensor tot 2.0 meter, echter metingen groter dan 1.9 meter zijn zeer onderhevig aan ruis en kunnen z.g.n. false-positive metingen opleveren. Houd hiermee rekening in je berekening.
 
 Test de werking van het programma
 ```
@@ -184,7 +184,7 @@ ros2 interface show range_sensors_interfaces/msg/BoxHeightInformation
 ```
 
 ## Opdracht 1.4 Creeër een Python publisher
-Maak op een publisher aan met de vogende gegevens:
+Maak op een publisher aan met de volgende gegevens:
 * Topic: /box_height_info
 * Message-type: BoxHeightInformation
 * Queue-size: 10
@@ -238,4 +238,10 @@ Maak een evaluatie van wat door *rqt_graph* wordt gepresenteerd. Je kunt deze to
 ## Opdracht 1.6 Opschonen
 Schoon je programma van *assignment1.py* op:
 * Verwijder alle onnodige *"self.get_logger().info()"* statements
-* Voorzie je programma van functioneel commentaar
+* Voorzie je programma van functioneel commentaar  
+  > Functioneel commentaar betekent dat je bij je code uitlegt wat het doel en de werking van functies, klassen en belangrijke codeblokken is. Bijvoorbeeld:  
+  > ```python
+  > # Deze functie berekent de hoogte van de doos op basis van de sensorwaarde
+  > def bereken_box_hoogte(sensor_waarde):
+  >     ...
+  > ```

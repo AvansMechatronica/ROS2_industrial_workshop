@@ -36,7 +36,7 @@ In deze service beschrijving vind je een opdeling in twee delen gescheiden door 
     * float64 distance_metres
 * 2e deel: Parameters die de service na behandeling terug geeft, __response__ genoemd:
     * float64 distance_inches
-    * bool success (deze wordt gebruikt om aan te merken dat in de service afhandeling geen fouten zijn opgetren en is optioneel)
+    * bool success (deze wordt gebruikt om aan te geven dat er tijdens de service-afhandeling geen fouten zijn opgetreden; deze is optioneel)
 
 Je kunt de service met een shell-commando testen, zie voorbeeld hieronder
 
@@ -52,7 +52,7 @@ In dit programma gebeurt er het volgende:
 * Er wordt een subscriber aangemaakt op het topic */box_height_info*
 * Als er een bericht op het topic wordt ontvangen dan wordt de *self.box_height_callback* geactiveerd
 * In de callback wordt een service-aanvraag gemaakt naar de *ConvertMetresToInches*-service door de *send_request(self, metres)* member-fuctie aan te roepen
-* In de response van de service-aanvraag is de hoogte in inches verwerkt. Deze wordt vervolgens afgedruct in een terminal
+* In de response van de service-aanvraag is de hoogte in inches verwerkt. Deze wordt vervolgens afgedrukt in een terminal
 
 ## Opdracht(Entry point toevoegen)
 Om een python programma met het **ros2 run** commando te starten dient het python programma in ros2 geregistreerd te worden. Deze registratie wordt opgenomen in de **setup.py** van een ros package.
@@ -62,7 +62,7 @@ Open daartoe het setup.py bestand in de package vn de **range_sensor**
 gedit ~/ros2_industrial_ws/src/ROS2_industrial/1_basics/range_sensor/setup.py 
 ```
 
-Voeg het entry point van assigment2.py toe aan de **entry_points-->console_scripts** sectie. 
+Voeg het entry point van assignment2.py toe aan de **entry_points-->console_scripts** sectie. 
 *Tip: Gebruik als voorbeeld assignment1*
 
 Referentie:[Python Packages](https://docs.ros.org/en/jazzy/How-To-Guides/Developing-a-ROS-2-Package.html#python-packages)
@@ -75,14 +75,14 @@ colcon build --symlink-install
 source install/setup.bash
 ```
 
-*Let op: De laatste regel dien je daarna in ieder opestaand terminal uit te voeren.
+*Let op: De laatste regel dien je daarna in ieder openstaand terminal uit te voeren.
 
 ## Opdracht(programmeren)
 In het bestand **assignment2.py** vind je op een aantal plaatsen een **Todo x**. Vul onder deze regels de code in  die in de Todo beschreven is.
 * Laat je inspireren door [Writing a simple service and client Python](https://docs.ros.org/en/jazzy/Tutorials/Writing-A-Simple-Py-Service-And-Client.html)
 
 ## Opdracht(testen)
-Om het programma te testen dien je achtereenvolgends de volgende node's te starten
+Om het programma te testen dien je achtereenvolgens de volgende node's te starten
 * Uit opdracht over topics
     * Sensor info publisher
     * Box hoogte berekeningen (assignment1.py)

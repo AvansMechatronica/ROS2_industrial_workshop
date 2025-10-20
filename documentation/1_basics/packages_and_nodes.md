@@ -1,8 +1,8 @@
 # ROS2 Packages and Nodes
-## Commando's
-Under contruction
+## Commando’s
+Under construction
 
-In deze workshop leer je een aantal basis ROS2 commando's die je in alle volgende workshops zult toepassen. Nu zullen de commando's nog volledig uigetyped zijn, later zul je ze zelf moeten kunnen toepassen. Let dus goed op wat er bebeurt(scherm-output) bij het uitvoeren van een commando.
+In deze workshop leer je een aantal basis ROS2 commando's die je in alle volgende workshops zult toepassen. Nu zullen de commando's nog volledig uitgetypt zijn, later zul je ze zelf moeten kunnen toepassen. Let dus goed op wat er gebeurt (scherm-output) bij het uitvoeren van een commando.
 
 Tip: maak gebruik van een cheatsheet, bijvoorbeeld deze van [TheConstruct](https://www.theconstruct.ai/wp-content/uploads/2021/10/ROS2-Command-Cheat-Sheets-updated.pdf).
 
@@ -22,7 +22,7 @@ of
 ```bash
 ros2 -h
 ```
-Hulp bij een sub-commando werk net zo
+Hulp bij een sub-commando werkt net zo
 ```bash
 ros2 pkg
 ```
@@ -31,52 +31,52 @@ ros2 pkg
 ```bash
 ros2 pkg list
 ```
-Filter de lijst door het Linux grep opdracht te pijpen (**| grep**) Hieronder wordt gefilterd op alle packages met de naam 'node'
+Filter de lijst door het Linux commando grep te gebruiken via een pipe (**| grep**). Hieronder wordt gefilterd op alle packages met de naam 'node'.
 ```bash
 ros2 pkg list | grep node
 ```
 ## Starten van een ROS2-node
-Een node wordt gestart met de volgende commando structuur
+Een node wordt gestart met de volgende commandostructuur
 ```
-ROS2 run <package-naam> <node-naam>
+ros2 run <package-naam> <node-naam>
 ```
 ```bash
 ros2 run node_demo demo_node
 ```
-Verkrijgen van een lijst met node die worden uitgevoerd(open hiervoor een nieuwe terminal)
+Verkrijgen van een lijst met nodes die worden uitgevoerd (open hiervoor een nieuwe terminal)
 ```bash
 ros2 node list
 ```
-Gedetialleerde informatie over een specefieke node
+Gedetailleerde informatie over een specifieke node
 ```bash
 ros2 node info /demo_node
 ```
-nb. De informatie van deze node is niet belangrijk voor deze oefening
+N.B. De informatie van deze node is niet belangrijk voor deze oefening
 
 Beeindigen van een node
 
 Schakel naar de terminal waarin de node executeert en druk op ctrl+c.
 
 ## Starten van meerdere nodes gelijktijdig
-Het starten van meerdere nodes kan gebeuren roor het **ros2 launch** commando
+Het starten van meerdere nodes kan gebeuren door het **ros2 launch** commando
 ```
-ROS2 launch <package-naam> <launchfile-naam>
+ros2 launch <package-naam> <launchfile-naam>
 ```
 ```bash
 ros2 launch range_sensor welcome.launch.py
 ```
 ## Opbouw van een package weergeven
 
-Schakel naar de juits map/directory
+Schakel naar de juiste map/directory
 ```bash
 cd ~/ros2_industrial_ws/src/ROS2_industrial/1_basics/
 ```
-Vraag de boomstructuur op met het tree-commando (Dit is een linux-commado)
+Vraag de boomstructuur op met het tree-commando (Dit is een Linux-commando)
 
 ```bash
 tree node_demo/
 ```
-n.b. als tree als commando niet wordt geaccepteerd, dan kun dit commando als volgt installeren
+n.b. als tree als commando niet wordt geaccepteerd, dan kun je dit commando als volgt installeren
 ```bash
 sudo apt install tree
 ```
