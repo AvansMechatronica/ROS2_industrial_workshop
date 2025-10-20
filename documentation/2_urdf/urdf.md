@@ -3,7 +3,28 @@
 
 In deze workshop leer je een aantal technieken om zelf realistische simulatie omgeving te bouwen.
 
+
 ## Opdracht 1
+In deze opdracht ga je een nieuw object toevoegen aan de fabriek: een groene bol.
+
+De bol moet aan de andere kant van de transportband worden geplaatst, onder de trap aan het uiteinde van de fabriek.
+
+Raadpleeg de volgende illustraties. De rode pijl geeft aan waar je de bol moet plaatsen.
+::::{grid} 2
+:::{grid-item-card} 
+![Image](./images/assignment2_arrow_perspective.jpg)
+:::
+:::{grid-item-card}
+![Image](./images/assignment2_arrow_top_view.jpg)
+:::
+::::
+Start assignment 1
+```bash
+ros2 launch urdf_basics visualize_assignment1.launch.py
+```
+
+
+## Opdracht 2
 Plaats een bin(bak) op de hieronder aangegeven plaats.
 
 ::::{grid} 2
@@ -23,26 +44,6 @@ Voeg je urdf-xml code toe achter de regel:
 <!-- Add your solution to assignment 1 here -->
 ```
 Tip: Maak eerst door een <xacro>(zie regel 28 als voorbeeld) tag een bin_2_ aan en vervolgens met een <joint> een verbinding met de world_interface. Je kunt bin_1 gebruiken als voorbeeld.
-
-Start assignment 1
-```bash
-ros2 launch urdf_basics visualize_assignment1.launch.py
-```
-
-## Opdracht 2
-In deze opdracht ga je een nieuw object toevoegen aan de fabriek: een groene bol.
-
-De bol moet aan de andere kant van de transportband worden geplaatst, onder de trap aan het uiteinde van de fabriek.
-
-Raadpleeg de volgende illustraties. De rode pijl geeft aan waar je de bol moet plaatsen.
-::::{grid} 2
-:::{grid-item-card} 
-![Image](./images/assignment2_arrow_perspective.jpg)
-:::
-:::{grid-item-card}
-![Image](./images/assignment2_arrow_top_view.jpg)
-:::
-::::
 
 
 
