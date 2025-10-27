@@ -20,47 +20,60 @@ Je kunt een nieuwe configuratie aanmaken met het volgende commando:
 ros2 launch moveit_setup_assistant setup_assistant.launch.py
 ```
 
-Vervolgen kies je Create New MoveIt Configuration Package en selecteer je het urdf-bestand van de robot:
+Vervolgens kies je Create New MoveIt Configuration Package en selecteer je het urdf-bestand van de robot:
 
 ```
 /home/student/ros2_industrial_ws/src/ROS2_industrial/4_manipulation/manipulation/urdf/environment.urdf.xacro
 ```
-En kies je Load Files.
+Klik op de knop "Load Files" in de MoveIt Setup Assistant interface.
 Nu wordt het urdf-bestand van de robot ingeladen en zie je aan de linkerkant het robot-model.
+
+> **Let op:** Als het robot-model niet verschijnt, controleer dan of het pad naar het URDF-bestand correct is en of er geen fouten in het URDF-bestand staan. Raadpleeg de terminal voor foutmeldingen en probeer het bestand opnieuw te laden.
 
 Rechts staan de verschillende onderdelen van de configuratie die je kunt aanpassen. Voor deze workshop is het voldoende om alleen de volgende onderdelen aan te passen:
 * Self-Collisions:
-    * Lees de "Optimize Self-Collision Checking" instructies
+    * Lees de "Optimize Self-Collision Checking" instructies ([zie MoveIt documentatie](https://moveit.picknik.ai/main/doc/examples/setup_assistant/setup_assistant_tutorial.html#optimize-self-collision-checking))
     * Klik op "Generate Collision Matrix"
+    * Bestudeer de gegenereerde matrix door op de verschillende items te klikken; let op welke robotdelen elkaar kunnen raken en controleer of de matrix overeenkomt met je verwachtingen over mogelijke botsingen.
     * Bestudeer de gegenereerde matrix door op de verschillende items te klikken
 * Virtual Joints (optioneel):
+    * Voeg een virtual joint toe tussen de "world" en de "base_link" van de robot (alleen nodig als de robot niet fysiek aan de wereld is bevestigd, bijvoorbeeld bij mobiele robots), gebruik de Add Virtual Joint knop
     * Voeg een virtual joint toe tussen de "world" en de "base_link" van de robot, gebruik de Add Virtual Joint knop
     * Kies als type "fixed"
 * Planning Groups:
     * Maak een nieuwe planning group aan met de "Add Group" knop
     * Kies als type "Joint Model Group"
     * Geef de groep een naam, bijvoorbeeld "xarm6"
-    * Kies voor Kinematic Solver: "kdl_kinematics_plugin/KDLKinematicsPlugin"
-    * Kies voor Group Default Planner: "RRTConnect"
+    * Kies voor Kinematic Solver: "kdl_kinematics_plugin/KDLKinematicsPlugin" (controleer de exacte naam met `ros2 pkg list | grep kdl_kinematics_plugin` en pas aan indien nodig, bijvoorbeeld "kdl_kinematics_plugin/KDLKinematicsPlugin" of "kdl_kinematics_plugin/KDLKinematicsPlugin")
+    * Kies voor Group Default Planner: "RRTConnect"  
+      > RRTConnect is aanbevolen omdat het een snelle en robuuste planner is voor robotarmen met veel vrijheidsgraden, zoals de xarm6, en goed werkt voor het plannen van complexe bewegingstrajecten.
     * Voer "Add Kin. Chain" uit
     * Selecteer de "base_link" als Start Link
     * Selecteer de "vacuum_gripper1_suction_cup" als End Link
     * Klik op "Save"
 * Robot Poses:
     * Maak een nieuwe 3 poses aan met de Pose Names "Home", "Left", "Right" aan door de "Add Pose" knop
+      * "Home": De standaard uitgangspositie van de robotarm, waarbij alle gewrichten in een neutrale stand staan zodat de arm compact is en geen onderdelen elkaar raken.
+      * "Left": Een positie waarbij de robotarm naar links is uitgestrekt, bijvoorbeeld om een object aan de linkerkant van het werkgebied te bereiken.
+      * "Right": Een positie waarbij de robotarm naar rechts is uitgestrekt, bijvoorbeeld om een object aan de rechterkant van het werkgebied te bereiken.
+      * Stel de joint waarden in voor elke pose door de sliders te gebruiken zodat de arm de gewenste positie aanneemt.
     * Stel de joint waarden in voor elke pose door de sliders te gebruiken
     * Klik op "Save"
 * End Effectors:
-    * Dit wordt gebruikt om de grijper te definiëren, maar is voor deze workshop niet strikt noodzakelijk
+    * Dit onderdeel wordt gebruikt om de grijper (end effector) te definiëren, bijvoorbeeld als je geavanceerde grijperfunctionaliteit wilt toevoegen.
+    * Voor deze workshop is het niet strikt noodzakelijk, maar als je wilt leren hoe je een end effector definieert, raadpleeg dan de [MoveIt End Effectors documentatie](https://moveit.picknik.ai/main/doc/examples/setup_assistant/setup_assistant_tutorial.html#end-effectors).
+    * Hier kun je bijvoorbeeld de grijper koppelen aan een planning group en aangeven welke link als end effector wordt gebruikt.
 * Passive Joints:
-    * Doe niets, deze robot heeft geen passive joints
+    * Geen actie vereist; deze robot heeft geen passive joints
 * ros2_control URDF Modifications:
     * Doe niets, deze robot heeft geen ros2_control componenten
 * ROS 2 Controllers:
-    * Kies "Auto Add JointTranjectryController Controllers For Eacch Planning Group"
+    * Kies "Auto Add JointTrajectoryController Controllers For Each Planning Group"
 * MoveIt Controllers:
     * Kies "Auto Add MoveItSimpleControllerManager For Each ROS2 Controller"
-* Perception;
+      > Deze optie genereert automatisch controller-configuraties voor elke ROS2 controller, waardoor je handmatige instellingen kunt overslaan en de kans op fouten wordt verminderd.
+    * Kies "Auto Add MoveItSimpleControllerManager For Each ROS2 Controller"
+* Perception:
     * Doe niets, we gebruiken geen perceptie in deze workshop
 * Launch Files:
     * Zorg ervoor dat alle Launch Files zijn geselecteerd

@@ -20,12 +20,12 @@ Raadpleeg de volgende illustraties. De rode pijl geeft aan waar je de bol moet p
 ::::
 
 Bewerk daartoe het *"assignment1.urdf.xacro"* bestand in de package urdf_basics van 2_urdf directory.
+
 Voeg je urdf-xml code toe achter de regel:
 
 ```
 <!-- Add your solution to assignment 1 here -->
 ```
-Tip: Maak eerst door een <xacro>(zie regel 28 als voorbeeld) tag een bin_2_ aan en vervolgens met een <joint> een verbinding met de world_interface. Je kunt bin_1 gebruiken als voorbeeld.
 
 Start assignment 1
 ```bash
@@ -34,7 +34,7 @@ ros2 launch urdf_basics visualize_assignment1.launch.py
 
 
 ## Opdracht 2
-Plaats een bin(bak) op de hieronder aangegeven plaats.
+Plaats een nieuwe bin (bak) met de naam bin_2 op de hieronder aangegeven plaats. Gebruik bin_1 als voorbeeld voor de opbouw en verbinding.
 
 ::::{grid} 2
 :::{grid-item-card} 
@@ -47,21 +47,24 @@ Plaats een bin(bak) op de hieronder aangegeven plaats.
 
 
 
-
-
-
 Bewerk daartoe het *"assignment2.urdf.xacro"* bestand in de package urdf_basics van 2_urdf directory.
 Voeg je urdf-xml code toe achter de regel:
 ```
 <!-- Add your solution to assignment 2 here -->
 ```
 
+Tip: Maak eerst door een <xacro:macro> (zie regel 28 als voorbeeld) tag een bin_2_ aan en vervolgens met een <joint> een verbinding met de world_interface. Je kunt bin_1 gebruiken als voorbeeld.
+
+Voorbeeld:
+
+
 Start assignment 2
 ```bash
 ros2 launch urdf_basics visualize_assignment2.launch.py
 ```
 ## Opdracht 3
-In deze opdracht dien je Robot 2 (de *uFactory xArm6*) te vervangen door een *Fanuc LR Mate 200iC* robot.
+In deze opdracht dien je Robot 2 (de *uFactory xArm6*) te vervangen door een *Fanuc LR Mate 200iC* robot. 
+Verwijder de xArm6 code volledig uit het bestand, of zet deze in commentaar, zodat alleen de Fanuc LR Mate 200iC robot overblijft.
 
 Website: [Fanuc LR Mate-serie](https://www.fanuc.eu/be/nl/robots/robot-filter-pagina/lrmate-serie)
 
@@ -102,16 +105,18 @@ Start assignment 4
 ```bash
 ros2 launch urdf_basics visualize_assignment4.launch.py
 ```
-Je zult zien dat er een foutmelding optreed. Je kunt de oorzaak van de fout op sporen door de volgende twee stappen:
+Je zult zien dat er een foutmelding optreedt. Je kunt de oorzaak van de fout op sporen door de volgende twee stappen:
 * xacro-bestand omzetten naar een urdf-bestand
     * Let op: Dit hoeft niet te gebeuren als je al een urdf-bestand hebt.
-* Met het commando "check_urdf" een controlle op het urdf-bestand uitvoeren
+* Met het commando "check_urdf" een controlle op het urdf-bestand uitvoeren  
+  *(Het commando "check_urdf" controleert het urdf-bestand op syntaxisfouten en structurele problemen, zoals ontbrekende links, joints, of ongeldige waarden.)*
 
 Zorg dat je in de juiste directory bent:
 ``` bash
 cd ~/ros2_industrial_ws/src/ROS2_industrial/2_urdf/urdf_basics/urdf
 ```
-
+Met onderstaand commando kun je een .xacro bestand omzetten naar een .urdf bestand en vervolgens controleren op fouten.
+Het omzetten naar een .urdf bestand is nodig omdat sommige tools, zoals check_urdf, alleen met het standaard URDF-formaat werken en zo kun je gemakkelijker fouten opsporen.
 Met onderstaand commado kun je een .xacro bestand omzetten naar een .urdf bestand en vervolgens controleren op fouten.
 ``` bash
 xacro assignment4.urdf.xacro > assignment4.urdf
@@ -121,7 +126,11 @@ Controlleer het urdf-bestand op fouten met het commando:
 ``` bash
 check_urdf assignment4.urdf
 ```
+
 De foutmelding die je krijgt, geeft een aanwijzing over de oorzaak van de fout. Zoek de fout in het *"assignment4.urdf.xacro"* bestand en los deze op.
 
+Veelvoorkomende fouten zijn bijvoorbeeld ontbrekende tags (zoals <link> of <joint>), foutieve attribuutwaarden (zoals een ongeldige naam of type), of een verkeerd gesloten XML-tag. Controleer het bestand zorgvuldig op deze punten.
+
+Let op: Het gegenereerde urdf-bestand hoeft niet aangepast te worden, alleen het xacro-bestand.
 Let op: Het gegenereerde urdf-bestand hoeft niet aangepast te worden, alleen het xacro-bestand.
 
