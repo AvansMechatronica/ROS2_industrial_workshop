@@ -245,3 +245,24 @@ Schoon je programma van *assignment1.py* op:
   > def bereken_box_hoogte(sensor_waarde):
   >     ...
   > ```
+
+## rqt-tools
+ROS2 heeft een aantal handige tools die je kunt gebruiken om de werking van je nodes en topics te monitoren. Deze tools zijn onderdeel van het *rqt*-framework, een grafische interface voor ROS2.  
+
+## rqt
+Je kunt de rqt-interface starten met het volgende commando. Met deze interface kun je verschillende plugins gebruiken om je ROS2-systeem te monitoren, zoals bijvoorbeeld topics, nodes, parameters, etc.. Je kunt topics monitoren door de juiste plugin te selecteren in het rqt-menu. Envervolgens kun je de gewenste topics toevoegen aan de interface om hun data te bekijken.
+Zorg er wel voor dat je de nodes uit opdracht 1.4. hebt gestart.
+```bash
+ros2 run rqt rqt 
+``` 
+
+## rqt-graph
+Je kunt een grafisch overzicht maken van alle nodes en hun bijbehorende topics met het volgende commando. Zorg er wel voor dat je de nodes uit opdracht 1.4. hebt gestart.
+```bash
+ros2 run rqt_graph  
+```
+## rqt_plot
+Je kunt de hoogte van de doos grafisch weergeven met het volgende commando. Zorg er wel voor dat je de nodes uit opdracht 1.4. hebt gestart.
+```bash ros2 run rqt_plot rqt_plot /box_height_info/box_height
+``` 
+Maak een evaluatie van wat door *rqt_graph* en *rqt_plot* wordt gepresenteerd. Je kunt deze tools gebruiken om inzcht in de communicatiestromen van je applicatie te krijgen.
