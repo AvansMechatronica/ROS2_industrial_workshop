@@ -26,7 +26,7 @@ Welcome to Avans ROS2 Industrial Workshop
 Deze workshop is ontwikkeld door:
 
 + Avans Academie voor Technologie en Innovatie (ATIx)
-+ Avans Centre Of Expertises, lectoraat Robotisering en Sensoring
++ Avans Centre of Expertise, lectoraat Robotisering en Sensoring
 
 License
 -------
