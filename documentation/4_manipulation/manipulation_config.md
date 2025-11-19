@@ -7,8 +7,10 @@ We beginnen met het verkennen van de virtuele omgeving
 ros2 launch manipulation view_environment.launch.py
 ```
 
-> **Let op:** Soms start de setup_assistant niet goed op. Dit is een bekend probleem dat je als volgt kunt oplossen:
-```
+> **Let op:** Soms start de setup_assistant niet goed op. Dit is een bekend probleem dat je als volgt kunt oplossen, doe dit pas als het probleem zich voordoet:
+
+```bash
+cd ~
 wget http://snapshots.ros.org/jazzy/2025-05-23/ubuntu/pool/main/r/ros-jazzy-rviz-common/ros-jazzy-rviz-common_14.1.11-1noble.20250520.201719_amd64.deb
 sudo dpkg -i ros-jazzy-rviz-common_14.1.11-1noble.20250520.201719_amd64.deb
 ```

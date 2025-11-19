@@ -11,7 +11,7 @@ Je zult zien dat Gazebo en RVIZ wordt. In de omgeving zie je een robotarm, een t
 
 Met de camera kunnen we de positie van objecten detecteren. De camera is gepositioneerd boven de tafel en kijkt naar beneden. De camera stuurt de gedetecteerde objectposities, na het nemen van een foto, door naar een ROS2-topic genaamd `/ros_industrial/sensors/custom_logical_camera/objects`. Dit topic bevat de coördinaten van de objecten in de wereld.
 
-Let op: De camera is een zogenaamde "logical camera". Dit betekent dat het geen echte beelden of foto's maakt, maar in plaats daarvan de posities van objecten in de wereld doorgeeft. Dit is handig voor simulaties omdat het eenvoudiger is dan het verwerken van echte beelden.
+> Let op: De camera is een zogenaamde "logical camera". Dit betekent dat het geen echte beelden of foto's maakt, maar in plaats daarvan de posities van objecten in de wereld doorgeeft. Dit is handig voor simulaties omdat het eenvoudiger is dan het verwerken van echte beelden.
 
 Je kunt objecten op de tafel plaatsen door het volgende commando uit te voeren:
 
@@ -26,7 +26,9 @@ Door het nemen van een foto met de camera, worden de objecten gedetecteerd en kr
 ros2 run ros_industrial_sensors take_photo.py
 ```
 
-In Rviz kun je nu de frames van de objecten zien. Elk object krijgt een uniek frame toegewezen, zoals `object_1`, `object_2`, etc. Deze frames geven de positie en oriëntatie van de objecten in de wereld aan.
+Verken nu de frames in Rviz.
+
+In Rviz kun je nu de frames van de objecten zien. Elk object krijgt een uniek frame toegewezen, zoals `battery`, `pump`, etc. Deze frames geven de positie en oriëntatie van de objecten in de wereld aan(t.o.v. de camera).
 
 gebruik het volgende commando om de frames te bekijken:
 
@@ -34,6 +36,7 @@ gebruik het volgende commando om de frames te bekijken:
 ros2 run tf2_tools view_frames 
 ```
 dit commando genereert een PDF-bestand genaamd `frames_<date>_<time>.pdf` in de huidige map. Open dit bestand(via de project-explorer) om de hiërarchie van frames te bekijken.
+>  ??? Dit lijkt nog niet te werken!!
 
 Sluiten van Gazebo en RVIZ doe je met Ctrl-C in de terminal waar je het gestart hebt.
 
@@ -85,4 +88,4 @@ Maak een functie zoals hier beschreven.
 def move_to_object(self, part, z_offset = 0.0):
     pass
 ```
-Deze functie moet de robot naar een object bewegen met een optionele z-offset. Gebruik deze functie in plaats van de code die je eerder hebt geschreven om naar de objecten te bewegen. Test het script.
+Deze functie moet de robot naar een object bewegen met een optionele z-offset. Gebruik deze functie in plaats van de code die je eerder hebt geschreven om naar de objecten te bewegen. Test het Python script.
