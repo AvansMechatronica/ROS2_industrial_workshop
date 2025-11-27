@@ -20,6 +20,7 @@ Je kunt een nieuwe configuratie aanmaken met het volgende commando:
 ros2 launch moveit_setup_assistant setup_assistant.launch.py
 ```
 
+
 Vervolgen kies je Create New MoveIt Configuration Package en selecteer je het urdf-bestand van de robot:
 
 ```
