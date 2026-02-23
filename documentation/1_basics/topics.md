@@ -266,3 +266,33 @@ Je kunt de hoogte van de doos grafisch weergeven met het volgende commando. Zorg
 ```bash ros2 run rqt_plot rqt_plot /box_height_info/box_height
 ``` 
 Maak een evaluatie van wat door *rqt_graph* en *rqt_plot* wordt gepresenteerd. Je kunt deze tools gebruiken om inzcht in de communicatiestromen van je applicatie te krijgen.
+
+## Opdracht 1.7 tijd_publisher(uitdaging)
+Meek een node genaamd `tijd_publisher` die op een topic genaamd "/current_time" de huidige tijd publiceert. Gebruik hiervoor het message type "std_msgs/msg/String". Je kunt de huidige tijd verkrijgen met behulp van de Python module "datetime".
+
+Test de werking van deze node door in een terminal de volgende commando's uit te voeren:
+```bash
+ros2 run range_sensor tijd_publisher
+```
+
+En in een volgende terminal:
+```bash
+ros2 topic echo /current_time
+```
+
+## Opdracht 1.8 Uitbreiding(uitdaging)
+De 'tijd_publisher' node die je in opdracht 1.7 hebt gemaakt, publiceert is eigenlijk geplaatst in een package die bedoeld is voor range-sensor functionaliteit. Het is beter om deze node in een aparte package te plaatsen, zodat de functionaliteit beter gescheiden blijft.
+Maak een nieuwe package aan genaamd 'time_publisher' en verplaats de 'tijd_publisher' node naar deze nieuwe package. Zorg ervoor dat je de nodige aanpassingen maakt in de setup.py bestanden van de nieuwe package, zodat de node correct kan worden gebouwd en uitgevoerd.
+
+[ROS2 Tutorial: Creating Your First ROS2 Package](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html#create-a-package)
+* Maak een Python package aan met de naam 'time_publisher'
+
+Test de werking van deze node door in een terminal de volgende commando's uit te voeren:
+```bash
+ros2 run time_publisher tijd_publisher
+```
+
+En in een volgende terminal:
+```bash
+ros2 topic echo /current_time
+```
