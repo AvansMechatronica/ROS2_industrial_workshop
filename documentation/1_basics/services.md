@@ -101,3 +101,29 @@ Om het programma te testen dien je achtereenvolgens de volgende node’s te star
     * Box hoogte berekeningen (assignment1.py)
 
 * Deze opdracht (assignment2.py)
+
+## Opdracht 5: Cirkel Service (uitdaging)
+Maak een eigen service welke de volgende functionaliteit heeft:
+* De service ontvangt een radius van een cirkel als parameter
+* De service berekent de oppervlakte van de cirkel en on de omtrek van de cirkel
+* De service geeft de oppervlakte en de omtrek terug in de response 
+
+Voer de volgende stappen uit:
+1. Definieer een nieuwe servicebeschrijving in een .srv bestand waarin de request en response worden gespecificeerd. De request moet een parameter bevatten voor de radius van de cirkel, en de response moet parameters bevatten voor zowel de oppervlakte als de omtrek van de cirkel. Bou deze servicebeschrijving in een ROS2 package, bijvoorbeeld in de package **range_sensor** of in een nieuwe package die je aanmaakt voor deze service. Controleer dat de servicebeschrijving correct is en dat deze kan worden gebruikt om een service server en client te implementeren. Je kunt de servicebeschrijving testen door het command line commando **ros2 interface proto** te gebruiken om de request/response-structuur van de service te bekijken. Zie hiervoor opdracht 1 van deze workshop.
+2. Implementeer een service server die de berekeningen uitvoert op basis van de ontvangen radius en de resultaten teruggeeft in de response.
+3. Implementeer een service client die een radius naar de service stuurt en de ontvangen oppervlakte en omtrek afdrukt.
+4. Voeg de service server en client toe als entry points in de setup.py van je package, zodat je ze kunt starten met ros2 run.
+
+:::{hint}
+Vergeet niet om de package opnieuw te bouwen met colcon build nadat je de servicebeschrijving hebt toegevoegd en nadat je de service server en client hebt geïmplementeerd.
+:::
+
+## Opdracht 6: Testen van de cirkel service (uitdaging)
+Test de service door gebruik te maken van het command line commando **ros2 service call** om je service te testen.
+
+```bash
+ros2 service call /circle_service <service_type> "{radius: 5.0}"
+```
+
+## Opdracht 7: Client programmeren voor cirkel service (uitdaging)
+Programmeer een client die een radius naar de cirkel service stuurt en de ontvangen oppervlakte en omtrek afdrukt. Gebruik hiervoor de stappen beschreven in opdracht 3, maar pas deze aan voor de cirkel service. Maak een nieuw Python programma aan, bijvoorbeeld **circle_client.py**, en implementeer hierin de service client functionaliteit voor de cirkel service. Maak het programma zodanig dat je de radius kunt invoeren vanaf de terminal. Gebruik hiervoor het Python **input()** functie om de radius van de gebruiker te verkrijgen voordat je de service-aanvraag verstuurt. Zorg ervoor dat je de ontvangen oppervlakte en omtrek correct afdrukt in de terminal.
