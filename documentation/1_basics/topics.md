@@ -88,7 +88,7 @@ Opmerking: als gedit nog niet is geinstalleerd dan kun je dat als volgt doen:
 ```bash
 sudo apt install gedit
 ```
-## Opdracht 1.1 creëer een Python subscriber
+## Opdracht 1: Creeër een Python subscriber
 Maak een subscriber aan met de volgende gegevens:
 * Topic: /sensor_info
 * Message-type: SensorInformation
@@ -106,7 +106,7 @@ Test de werking van het programma
 ros2 run range_sensor assignment1 
 ```
 
-## Opdracht 1.2 Bereken de hoogte van de doos en druk deze af
+## Opdracht 2: Bereken de hoogte van de doos en druk deze af
 In deze opdracht ga je de hoogte van het object op de conveyor berekenen. De sensor is op 2 meter hoogt t.o.v. de conveyor gemonteerd.
 Maak een berekening voor de hoogte van het object onder de sensor door schuift. Druk deze hoogte af met het *"self.get_logger().info()"* statement in de *"sensor_info_callback()"* member-functie.
 
@@ -123,7 +123,7 @@ Test de werking van het programma
 ros2 run range_sensor assignment1 
 ```
 
-## Opdracht 1.3 Creeër een nieuw message type
+## Opdracht 3: Creeër een nieuw message type
 In deze opdracht ga je een nieuw message type maken waarin later, via een topic, de hoogte van het object onder de sensor wordt gepubliceerd. 
 Naam message type: BoxHeightInformation
 Infomatie in message type: box_height (type float32)
@@ -183,7 +183,7 @@ Bekijk of je message goed is gefineerd
 ros2 interface show range_sensors_interfaces/msg/BoxHeightInformation
 ```
 
-## Opdracht 1.4 Creeër een Python publisher
+## Opdracht 4: Creeër een Python publisher
 Maak op een publisher aan met de volgende gegevens:
 * Topic: /box_height_info
 * Message-type: BoxHeightInformation
@@ -228,14 +228,14 @@ ros2 topic echo <topic waarin de box hoogte is gepubliceert>
 
 Test de werking van de opdracht en voer eventueel verbeteringen door in de opdracht code.
 
-## Opdracht 1.5 Gebruik rgt-graph
-Je kunt een grafisch overzich maken van alle nodes en hun bijbehorende topics met het volgende commando. Zorg er wel voor dat je de nodes uit opdracht 1.4. hebt gestart.
+## Opdracht 5 Gebruik rgt-graph
+Je kunt een grafisch overzich maken van alle nodes en hun bijbehorende topics met het volgende commando. Zorg er wel voor dat je de nodes uit opdracht 4. hebt gestart.
 ```bash
 ros2 run rqt_graph rqt_graph 
 ```
 Maak een evaluatie van wat door *rqt_graph* wordt gepresenteerd. Je kunt deze tool gebruiken om inzcht in de communicatiestromen van je applicatie te krijgen.
 
-## Opdracht 1.6 Opschonen
+## Opdracht 6: Opschonen
 Schoon je programma van *assignment1.py* op:
 * Verwijder alle onnodige *"self.get_logger().info()"* statements
 * Voorzie je programma van functioneel commentaar  
@@ -264,7 +264,7 @@ ros2 run rqt_graph
 
 Maak een evaluatie van wat door *rqt* en *rqt_graph* wordt gepresenteerd. Je kunt deze tools gebruiken om inzcht in de communicatiestromen van je applicatie te krijgen.
 
-## Opdracht 1.7 tijd_publisher(uitdaging)
+## Opdracht 7: Tijd_publisher(uitdaging)
 Meek een node genaamd `tijd_publisher` die op een topic genaamd "/current_time" de huidige tijd publiceert. Gebruik hiervoor het message type "std_msgs/msg/String". Je kunt de huidige tijd verkrijgen met behulp van de Python module "datetime".
 
 Test de werking van deze node door in een terminal de volgende commando's uit te voeren:
@@ -284,7 +284,7 @@ En in een volgende terminal:
 ros2 topic echo /current_time
 ```
 
-## Opdracht 1.8 Uitbreiding(uitdaging)
+## Opdracht 8: Uitbreiding(uitdaging)
 De 'tijd_publisher' node die je in opdracht 1.7 hebt gemaakt, publiceert is eigenlijk geplaatst in een package die bedoeld is voor range-sensor functionaliteit. Het is beter om deze node in een aparte package te plaatsen, zodat de functionaliteit beter gescheiden blijft.
 Maak een nieuwe package aan genaamd 'time_publisher' en verplaats de 'tijd_publisher' node naar deze nieuwe package. Zorg ervoor dat je de nodige aanpassingen maakt in de setup.py bestanden van de nieuwe package, zodat de node correct kan worden gebouwd en uitgevoerd.
 

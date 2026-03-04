@@ -43,7 +43,7 @@ Je kunt de service met een shell-commando testen, zie voorbeeld hieronder
 ```bash
 ros2 service call /metres_to_inches range_sensors_interfaces/srv/ConvertMetresToInches "{distance_metres : 1.0}"
 ```
-## Opdracht
+## Opdracht 1: Service client programmeren
 In deze opdracht ga je een service-aanvraag naar de ConvertMetresToInches-service programmeren. 
 
 Je gaat daartoe het Python programma **assignment2.py** bewerken op bepaalde aangeven plaatsen. Zoek in het bestand naar commentaarregels met "Todo x" en voeg de gevraagde code direct onder elke commentaarregel toe.
@@ -54,7 +54,7 @@ In dit programma gebeurt er het volgende:
 * In de callback wordt een service-aanvraag gemaakt naar de *ConvertMetresToInches*-service door de *send_request(self, metres)* member-fuctie aan te roepen
 * In de response van de service-aanvraag is de hoogte in inches verwerkt. Deze wordt vervolgens afgedrukt in een terminal
 
-## Opdracht (Entry point toevoegen)
+## Opdracht 2: Entry point toevoegen
 Om een python programma met het **ros2 run** commando te starten dient het python programma in ros2 geregistreerd te worden. Deze registratie wordt opgenomen in de **setup.py** van een ros package.
 
 Open daartoe het setup.py bestand in de package vn de **range_sensor**
@@ -79,7 +79,7 @@ source install/setup.bash
 
 *Let op: De laatste regel dien je daarna in ieder openstaand terminal uit te voeren.
 
-## Opdracht(programmeren)
+## Opdracht 3: Programmeren
 In het bestand **assignment2.py** vind je op een aantal plaatsen een **Todo x**. Vul onder deze regels de code in die in de Todo beschreven is.
 * Laat je inspireren door [Writing a simple service and client Python](https://docs.ros.org/en/jazzy/Tutorials/Writing-A-Simple-Py-Service-And-Client.html), met name de secties over het aanmaken van een service client, het versturen van een request, en het verwerken van de response.
 Specifiek, implementeer een ROS2 service client met rclpy door:
@@ -91,7 +91,7 @@ Specifiek, implementeer een ROS2 service client met rclpy door:
 Zie [Writing a simple service and client Python](https://docs.ros.org/en/jazzy/Tutorials/Writing-A-Simple-Py-Service-And-Client.html) voor voorbeeldcode en patronen.
 * Laat je inspireren door [Writing a simple service and client Python](https://docs.ros.org/en/jazzy/Tutorials/Writing-A-Simple-Py-Service-And-Client.html)
 
-## Opdracht(testen)
+## Opdracht 4: Testen
 Om het programma te testen dien je achtereenvolgens de volgende node’s te starten
 
 * Uit opdracht over topics
