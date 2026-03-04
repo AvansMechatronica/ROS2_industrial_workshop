@@ -7,8 +7,7 @@ Maak een ROS2 package aan genaamd **time_publisher** met de volgende commandostr
 ```bash
 ros2 pkg create --build-type ament_python time_publisher
 ```
-:::
-{hint}
+:::{hint}
 Voer dit commando uit in de src map van je workspace:
 ```bash
 cd ~/ros2_industrial_ws/src
@@ -23,8 +22,7 @@ Maak een Python node aan zoals beschreven is in de opdracht over [ROS2 topics](h
 
 ## Opdracht 3: Bouwen
 Bouw de package met **colcon build** 
-:::
-{hint}
+:::{hint}
 1. Voer dit commando uit in de root van je workspace: `~/ros2_industrial_ws`
 2. Gebruik de `--symlink-install` optie bij `colcon build`.
 :::

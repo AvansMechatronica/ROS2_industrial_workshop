@@ -33,8 +33,7 @@ ros2 topic list
 
 ## Opdracht 1: Uitbreiding van het launch bestand
 Breid het 'assignment1_2.launch.py' bestand uit met de node die je hebt gemaakt in `ROS2 services`   
-:::
-{tip}
+:::{tip}
 Gebruik als voorbeeld de nodes die al in het launch bestand staan. Je kunt deze nodes kopiëren en aanpassen voor jouw nieuwe node.
 :::
 
