@@ -98,7 +98,7 @@ Noem de subscriber 'sensor_info_subscription' en wijs deze toe aan `self.sensor_
 Voer de code in onder onderstaande regel in het assignment1.py bestand, binnen de constructor (`__init__` methode) van de klasse:
 
 ```
-#<Assignment 1.1, creëer hier de subscriber op het topic /sensor_info>*
+#<Todo 1, creëer hier de subscriber op het topic /sensor_info>*
 ```
 
 Test de werking van het programma
@@ -113,7 +113,7 @@ Maak een berekening voor de hoogte van het object onder de sensor door schuift. 
 Voer de code in onder onderstaande regel in het assignment1.py bestand
 
 ```
-#<Assignment 1.2, bereken hier de hoogte van het object>*
+#<Todo 2, bereken hier de hoogte van het object>*
 ```
 
 Let op: Volgens het gegevensblad van de sensor meet de sensor tot 2.0 meter, echter metingen groter dan 1.9 meter zijn zeer onderhevig aan ruis en kunnen z.g.n. false-positive metingen opleveren. Houd hiermee rekening in je berekening.
@@ -192,14 +192,14 @@ Maak op een publisher aan met de volgende gegevens:
 Noem de publisher 'box_height_publisher', zorg ervoor dat dit in de context van de klasse gebeurt, door de *self* operator.
 Voer de code in onder onderstaande regel in het assignment1.py bestand
 ```
-#<Assignment 1.4, Creëer hier de publisher voor het publiceren van de box hoogte>
+#<Todo 3, Creëer hier de publisher voor het publiceren van de box hoogte>
 ```
 Om er voor te zorgen dat het message-type beschikbaar is in je programma dien je de juist library te importeren.
 
 Voer de code in onder onderstaande regel in het assignment1.py bestand:
 
 ```
-#< Assignment 1.4, importeer hier de message type die je hebt aangemaakt voor de box hoogte>  
+#< Todo 4, importeer hier de message type die je hebt aangemaakt voor de box hoogte>  
 ```
 
 Je hebt nu een publisher gemaakt, waarop je de box hoogte kunt publiceren. Voeg daartoe code toe op de plaats waar je de box hoogte hebt berekend.
@@ -261,11 +261,8 @@ Je kunt een grafisch overzicht maken van alle nodes en hun bijbehorende topics m
 ```bash
 ros2 run rqt_graph  
 ```
-## rqt_plot
-Je kunt de hoogte van de doos grafisch weergeven met het volgende commando. Zorg er wel voor dat je de nodes uit opdracht 1.4. hebt gestart.
-```bash ros2 run rqt_plot rqt_plot /box_height_info/box_height
-``` 
-Maak een evaluatie van wat door *rqt_graph* en *rqt_plot* wordt gepresenteerd. Je kunt deze tools gebruiken om inzcht in de communicatiestromen van je applicatie te krijgen.
+
+Maak een evaluatie van wat door *rqt* en *rqt_graph* wordt gepresenteerd. Je kunt deze tools gebruiken om inzcht in de communicatiestromen van je applicatie te krijgen.
 
 ## Opdracht 1.7 tijd_publisher(uitdaging)
 Meek een node genaamd `tijd_publisher` die op een topic genaamd "/current_time" de huidige tijd publiceert. Gebruik hiervoor het message type "std_msgs/msg/String". Je kunt de huidige tijd verkrijgen met behulp van de Python module "datetime".
@@ -274,6 +271,13 @@ Test de werking van deze node door in een terminal de volgende commando's uit te
 ```bash
 ros2 run range_sensor tijd_publisher
 ```
+
+:::{hint}
+Voor het maken van deze node kun je de volgende stappen volgen:
+1. Zorg ervoor de de `tijd_publisher` node in de `setup.py` van de package is opgenomen, zodat deze kan worden gebouwd en uitgevoerd.
+2. Alvorens je de node kunt starten, dien je deze eerst te bouwen met het het `colcon build` commando.
+3. Source daarna je environment opnieuw, zodat de nieuwe node beschikbaar is in je terminal.
+:::
 
 En in een volgende terminal:
 ```bash
