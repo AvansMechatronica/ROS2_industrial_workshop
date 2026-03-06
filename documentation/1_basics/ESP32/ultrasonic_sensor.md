@@ -26,7 +26,7 @@ echo "source ~/microROS_agent_ws/install/setup.bash" >> ~/.bashrc
 
 
 ## Opdracht 2: Aansluiten van de ultrasoon sensor op de ESP32
-In deze opdracht gebruiken we een ESP32 C3 (Super-mini) device, maar je kunt ook een ander ESP32 device gebruiken. Zorg er wel voor dat je de juiste pin-aansluitingen gebruikt in je code.
+In deze opdracht gebruiken we een ESP32C3 (Super-mini) device, maar je kunt ook een ander ESP32 device gebruiken. Zorg er wel voor dat je de juiste pin-aansluitingen gebruikt in je code.
 ![image](../../images/ESP32/esp32-c3-mini.jpg) 
 
 
@@ -36,7 +36,7 @@ De SR04 ultrasoon sensor heeft vier pinnen: VCC, GND, Trig en Echo. Deze moeten 
 
 Pin aansluitingen:
 
-|   ESP32-C3 Pin   | SFR-04 Pin |
+|   ESP32-C3 Pin   | SRF-04 Pin |
 |:----------------:|:----------:|
 |        5V        |    VCC     |
 |       GND        |    GND     |
@@ -49,7 +49,7 @@ Voorbeeld van de aansluitingen, let op de kleuren!:
 ![Image](../../images/ESP32/esp32c3-wire.jpg)
 :::
 :::{grid-item-card}
-![Image](../../images/ESP32/sfr04-wire.jpg)
+![Image](../../images/ESP32/srf04-wire.jpg)
 :::
 ::::
 
