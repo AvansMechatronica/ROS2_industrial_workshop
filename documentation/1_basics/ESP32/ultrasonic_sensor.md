@@ -34,6 +34,8 @@ De SR04 ultrasoon sensor heeft vier pinnen: VCC, GND, Trig en Echo. Deze moeten 
 
 ![image](../../images/ESP32/srf-04.jpg)
 
+Pin aansluitingen:
+
 |   ESP32-C3 Pin   | SFR-04 Pin |
 |:----------------:|:----------:|
 |        5V        |    VCC     |
@@ -41,6 +43,7 @@ De SR04 ultrasoon sensor heeft vier pinnen: VCC, GND, Trig en Echo. Deze moeten 
 |        2         | Trig       |
 |        3         | Echo       |
 
+Voorbeeld van de aansluitingen, let op de kleuren!:
 ::::{grid} 2
 :::{grid-item-card} 
 ![Image](../../images/ESP32/esp32c3-wire.jpg)
@@ -100,7 +103,7 @@ Als je een andere USB-poort gebruikt, zorg er dan voor dat je het juiste apparaa
 
 
 ## Opdracht 6: Testen van de ultrasoon sensor
-Nadat het device is geprogrammeerd kun je de werking controlleren met:
+Nadat het device is geprogrammeerd kun je de werking controlleren met (in nieuwe terminal):
 
 ```bash
 ros2 topic echo /sensor_info
@@ -112,5 +115,6 @@ Als het goed is zul je nu de data van de ultrasoon sensor zien verschijnen in de
 
 Je kunt nu andere nodes starten zoals we dat in het hoofdstuk [`ROS2 Topics`](../topics.md) hebben gedaan. Je kunt bijvoorbeeld de node van `assignmet1` starten en kijken hoe de data van de ultrasoon sensor wordt gebruikt in die node. Probeer ook andere nodes te starten en te zien hoe ze reageren op de data van de ultrasoon sensor. Dit is een goede manier om te begrijpen hoe verschillende ROS2 nodes samenwerken en hoe sensordata kan worden gebruikt in een ROS2 omgeving.
 
-
-
+:::{tip}
+je kunt het project van de range-sensor ook als template gebruiken voor andere sensoren. Als je bijvoorbeeld een andere sensor hebt die data kan publiceren, kun je de code van de range-sensor aanpassen om deze nieuwe sensor aan te sturen en de data te publiceren op een ROS2 topic. Dit is een handige manier om snel nieuwe sensoren toe te voegen aan je ROS2 projecten.
+:::
