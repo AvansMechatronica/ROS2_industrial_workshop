@@ -4,7 +4,7 @@ ROS2 URDF Workshop
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Inhoudsopgave:
 
    urdf.md
    

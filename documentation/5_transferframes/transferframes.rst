@@ -4,7 +4,7 @@ ROS2 Transferframes Workshop
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Inhoudsopgave:
 
    transferframes.md
 

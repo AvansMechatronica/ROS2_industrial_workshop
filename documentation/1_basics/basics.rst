@@ -4,7 +4,7 @@ ROS2 Basics Workshop
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Inhoudsopgave:
 
    packages_and_nodes.md
    topics.md

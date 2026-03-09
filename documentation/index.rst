@@ -14,7 +14,7 @@ Welcome to Avans ROS2 Industrial Workshop
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Inhoudsopgave:
 
    general/general.md
    1_basics/basics
