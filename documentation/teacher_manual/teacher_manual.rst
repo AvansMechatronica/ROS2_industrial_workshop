@@ -1,5 +1,5 @@
-ROS2 Basics Workshop
-====================
+ROS2 Docenten Handleiding
+=========================
 
 
 .. toctree::
@@ -13,4 +13,5 @@ ROS2 Basics Workshop
    maniplation.md
    transfeurframes.md
    navigation.md
+   cases.md
 
