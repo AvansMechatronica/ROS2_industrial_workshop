@@ -9,6 +9,5 @@ ROS2 Manipulation Workshop
    manipulation_config.md
    manipulation_planning.md
    manipulation_pick_n_drop.md
-   manipulation_reference.md
    manipulation_practicum.md
 
