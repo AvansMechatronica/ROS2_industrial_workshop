@@ -5,6 +5,10 @@ Installeer ROS Jazzy, kies uit 1 van de twee volgende mogelijkheden:
 * WSL Distributie onder Windows(voorkeur voor studenten M)
 * Native Ubuntu
 
+:::{caution}
+Als je gebruik maakt van de Avans Ubuntu virtuele machine, dan kun je deze stappen overslaan, omdat ROS2-Jazzy al is geïnstalleerd in deze virtuele machine.
+:::
+
 :::::{card} 
 ::::{tab-set}
 
@@ -84,26 +88,34 @@ colcon build --symlink-install
 source install/setup.bash
 echo "source ~/ros2_industrial_ws/install/setup.bash" >> ~/.bashrc
 ```
-Opmerking: *Gebruik de laatse regel slechts 1 maal.*
+:::{caution}
+Gebruik de laatse regel slechts 1 maal
+:::
 
 ## Aantekening voor windows gebruikers
-Opmerking: *Alleen als je geen gebruik maakt van de door Avans gemaakte WSL-Jazzy distributie*
+:::{caution}
+Alleen als je geen gebruik maakt van de door Avans gemaakte WSL-Jazzy distributie
+:::
 
 Je kunt de WSL Ubuntu-22.04 distributie uit de Microsoft Store gebruiken. Gebruik als ontwikkelomgeving [Visual Studio Code] (https://code.visualstudio.com/download). Wijzig de installatie en voeg de WSL-plugin toe aan Visual Studio Code. Open de distributie met <F1>WSL: Connect to WSL. Vergeet niet ROS-Jazzy te installeren in de distributie. Cloon deze repositry naar de WSL distributie.
 
 ## Inleveren van opdrachten
-Als je een opdracht dient in te leveren voor je opleiding dan vind je dat terug in de Elekronische Leeromgeving van je opleiding (bijvoorbeeld Brightspace). Zorg ervoor dat je bij elke opdracht de volgende informatie in het bestand invult:
+:::{caution}
+Voor de course `AI-Driven Robotics` hoef je geen opdrachten in te leveren. De opdrachten zijn bedoeld als oefening en ter voorbereiding op de toets uit leeruikomst 1. Je kunt ze dus maken, maar je hoeft ze niet in te leveren.
+:::
+
+Als je een opdracht dient in te leveren voor je opleiding dan vind je dat terug als opdracht in de Elekronische Leeromgeving van je opleiding (bijvoorbeeld Brightspace). Zorg ervoor dat je bij elke opdracht de volgende informatie in het bestand invult:
 * Naam Student
 * Studentnummer
 * Datum
 
 Je gaat dan akkoord met onderstaande verklaring:
-~~~
+:::{important}
 Door het inleveren van dit bestand verklaar ik dat 
 ik deze opdracht zelfstandig heb uitgevoerd en
 dat ik geen code van anderen heb gebruikt.
 Tevens ga ik akkoord met de beoordeling van deze opdracht.
-~~~
+:::
 
 
 ## Verantwoording

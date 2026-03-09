@@ -4,7 +4,7 @@
 In deze workshop leer je een aantal technieken om zelf realistische simulatie omgeving te bouwen.
 
 
-## Opdracht 1
+## Opdracht 1: Objecten(bol) plaatsen
 In deze opdracht ga je een nieuw object toevoegen aan de fabriek: een groene bol.
 
 De bol moet aan de andere kant van de transportband worden geplaatst, onder de trap aan het uiteinde van de fabriek.
@@ -33,7 +33,7 @@ ros2 launch urdf_basics visualize_assignment1.launch.py
 ```
 
 
-## Opdracht 2
+## Opdracht 2: Bak plaatsen
 Plaats een nieuwe bin (bak) met de naam bin_2 op de hieronder aangegeven plaats. Gebruik bin_1 als voorbeeld voor de opbouw en verbinding.
 
 ::::{grid} 2
@@ -62,7 +62,7 @@ Start assignment 2
 ```bash
 ros2 launch urdf_basics visualize_assignment2.launch.py
 ```
-## Opdracht 3
+## Opdracht 3: Ander type robot plaatsen
 In deze opdracht dien je Robot 2 (de *uFactory xArm6*) te vervangen door een *Fanuc LR Mate 200iC* robot. 
 Verwijder de xArm6 code volledig uit het bestand, of zet deze in commentaar, zodat alleen de Fanuc LR Mate 200iC robot overblijft.
 
@@ -98,7 +98,7 @@ ros2 launch urdf_basics visualize_assignment3.launch.py
 ```
 
 
-## Opdracht 4
+## Opdracht 4: Fout opsporen in URDF/XACRO bestand
 In deze opdracht leer je een fout in een urdf- of xacro-bestand te zoeken en op te lossen.
 
 Start assignment 4
