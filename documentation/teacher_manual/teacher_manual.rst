@@ -1,10 +1,10 @@
-ROS2 Docenten Handleiding
-=========================
+Docenten Handleiding
+====================
 
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Inhoudsopgave:
 
    overview.md
    uitwerkingen.md
