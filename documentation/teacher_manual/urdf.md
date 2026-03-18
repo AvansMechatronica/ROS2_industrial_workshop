@@ -87,6 +87,15 @@ verwijder het commentaar van de volgende regel in de view_demo.launch.py
   </joint>
 ```
 
+## Xacro
+```bash
+ros2 run urdf_tutorial xacro_demo -d demo.urdf.xacro
+``
+
+## Checking the URDF
+```bash
+ros2 run urdf_tutorial check_urdf -d demo.urdf.xacro
+```
 
 ## URDF Solution
 ```bash
