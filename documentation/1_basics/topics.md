@@ -259,7 +259,7 @@ ros2 run rqt rqt
 ## rqt-graph
 Je kunt een grafisch overzicht maken van alle nodes en hun bijbehorende topics met het volgende commando. Zorg er wel voor dat je de nodes uit opdracht 1.4. hebt gestart.
 ```bash
-ros2 run rqt_graph  
+ros2 run rqt_graph rqt_graph
 ```
 
 Maak een evaluatie van wat door *rqt* en *rqt_graph* wordt gepresenteerd. Je kunt deze tools gebruiken om inzcht in de communicatiestromen van je applicatie te krijgen.
