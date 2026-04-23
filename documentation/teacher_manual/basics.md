@@ -54,7 +54,7 @@ tree -d -L 2
 
 ## ROS Packages map structuur
 ```
-cd ~/ros2_industrial_ws/src/ROS2_Industrial
+cd ~/ros2_industrial_ws/src/ROS2_Industrial/1_basics/range_sensor
 tree -d
 ```
 
