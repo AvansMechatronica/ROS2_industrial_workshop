@@ -37,12 +37,12 @@ Uit de volgende opdracht in een nieuwe terminal:
 ros2 run rqt_graph rqt_graph
 ```
 
-## Packages
+## ROS Packages
 ```
 ros2 pkg list
 ```
 
-## Workspace map structuur
+## ROS Workspace map structuur
 ```
 cd ~/ros2_industrial_ws
 tree -d
@@ -52,11 +52,15 @@ tree -d
 tree -d -L 2
 ```
 
-## Packages map structuur
+## ROS Packages map structuur
 ```
 cd ~/ros2_industrial_ws/src/ROS2_Industrial
 tree -d
 ```
 
+## Demo van history commando
+```
+history
+```
 
 **Under Construction**
