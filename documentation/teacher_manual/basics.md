@@ -34,12 +34,28 @@ ros2 node info /talker
 
 Uit de volgende opdracht in een nieuwe terminal:
 ```
-ros2 run rqt rqt
+ros2 run rqt_graph rqt_graph
 ```
 
-Uit de volgende opdracht in een nieuwe terminal:
+## Packages
 ```
-ros2 run rqt_graph rqt_graph
+ros2 pkg list
+```
+
+## Workspace map structuur
+```
+cd ~/ros2_industrial_ws
+tree -d
+```
+
+```
+tree -d -L 2
+```
+
+## Packages map structuur
+```
+cd ~/ros2_industrial_ws/src/ROS2_Industrial
+tree -d
 ```
 
 
