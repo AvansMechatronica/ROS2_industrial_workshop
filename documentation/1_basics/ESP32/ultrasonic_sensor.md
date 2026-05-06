@@ -73,6 +73,10 @@ Om de ESP32 te kunnen programmeren zonder root-toegang, moet je de juiste udev-r
 ```bash 
 curl -fsSL https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules | sudo tee /etc/udev/rules.d/99-platformio-udev.rules
 ```
+:::{note}
+Dit commando geeft veel oupout, maar dat is normaal. Het kopieert de udev-regels naar de juiste locatie.
+Na het toevoegen van de udev-regels, moet je het USB-apparaat opnieuw aansluiten.
+:::
 
 ### Openen van het microROS project
 Open met Visual Studio Code het project van de range-sensor in de volgende map (alleen map selecteren):
