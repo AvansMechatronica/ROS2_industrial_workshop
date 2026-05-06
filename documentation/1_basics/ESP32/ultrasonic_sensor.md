@@ -67,6 +67,13 @@ Het ESP32 device moet worden geprogrammeerd om de ultrasoon sensor aan te sturen
 ### Installeren van PlatformIO in Visual Studio Code
 Als je PlatformIO nog niet hebt geïnstalleerd, kun je dit doen via de extensies in Visual Studio Code. Zoek naar "PlatformIO" en installeer de extensie. Na installatie kun je onderstaand PlatformIO project openen.
 
+### Installeren 99-platformio.rules
+Om de ESP32 te kunnen programmeren zonder root-toegang, moet je de juiste udev-regels instellen. Dit doe je door het bestand *99-platformio.rules* te kopiëren naar de juiste locatie en de regels toe te voegen. Voer de volgende commando's uit in je terminal:
+
+```bash 
+curl -fsSL https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules | sudo tee /etc/udev/rules.d/99-platformio-udev.rules
+```
+
 ### Openen van het microROS project
 Open met Visual Studio Code het project van de range-sensor in de volgende map (alleen map selecteren):
 ```text
