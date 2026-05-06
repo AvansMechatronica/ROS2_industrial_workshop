@@ -102,11 +102,6 @@ Zorg ervoor dat je de juiste board en poort hebt geselecteerd in het *platformio
 ## Opdracht 5: Starten van de microROS-agent
 Voordat we de ESP32 kunnen testen, moeten we de microROS-agent starten op je computer. Dit is essentieel omdat de agent de communicatie tussen de ESP32 en ROS2 mogelijk maakt. Je kunt de microROS-agent starten met het volgende commando in je terminal:
 
-```bash
-ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
-```
-
-of
 
 ```bash
 ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0
@@ -116,6 +111,11 @@ ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0
 Als je een andere USB-poort gebruikt, zorg er dan voor dat je het juiste apparaat opgeeft in het commando. Je kunt de beschikbare USB-seriële apparaten controleren met het commando `ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null` en let daarbij op namen zoals `/dev/ttyUSB0` of `/dev/ttyACM0` voordat je de microROS-agent start.
 :::
 
+Controleer of de microROS-agent correct is gestart door te kijken naar de output in de terminal. Je zou een bericht moeten zien dat aangeeft dat de agent klaar is om verbindingen te accepteren. Als er fouten optreden, controleer dan of je de juiste USB-poort hebt opgegeven en of de ESP32 correct is aangesloten.
+
+:::{warning}
+Let op als er geen verbinding tot stand komt, vraag dan de docent om hulp. Er is een bekende fout die alleen door de docent kan worden opgelost.
+:::
 
 ## Opdracht 6: Testen van de ultrasoon sensor
 Nadat het device is geprogrammeerd kun je de werking controlleren met (in nieuwe terminal):
