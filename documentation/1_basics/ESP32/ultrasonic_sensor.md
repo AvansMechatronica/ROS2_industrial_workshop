@@ -13,6 +13,7 @@ De microROS-agent kan worden geïnstalleerd en geconfigureerd met de volgende st
 ```bash
 mkdir -p ~/microROS_agent_ws/src
 cd ~/microROS_agent_ws/src
+sudo apt install -y ros-jazzy-micro-ros*
 
 # Verkrijg de juiste ROS2 distributie
 git clone -b jazzy https://github.com/micro-ROS/micro-ROS-Agent.git
