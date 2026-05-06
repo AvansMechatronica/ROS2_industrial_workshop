@@ -64,6 +64,9 @@ Als je gebruik maakt van een virtuele machine, zorg er dan voor dat de USB-poort
 ## Opdracht 4: Programmeren van de ESP32 met microROS
 Het ESP32 device moet worden geprogrammeerd om de ultrasoon sensor aan te sturen en de gemeten data te publiceren op een ROS2 topic. Hiervoor gebruiken we Visual Studio Code met PlatformIO, wat een handige omgeving biedt voor het ontwikkelen van embedded software. In deze stap zullen we de code schrijven die de ultrasoon sensor aanstuurt, de afstand meet en deze informatie publiceert op het ROS2 topic **/sensor_info**.
 
+### Installeren van PlatformIO in Visual Studio Code
+Als je PlatformIO nog niet hebt geïnstalleerd, kun je dit doen via de extensies in Visual Studio Code. Zoek naar "PlatformIO" en installeer de extensie. Na installatie kun je onderstaand PlatformIO project openen.
+
 ### Openen van het microROS project
 Open met Visual Studio Code het project van de range-sensor in de volgende map (alleen map selecteren):
 ```text
