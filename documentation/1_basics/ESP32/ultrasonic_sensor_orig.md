@@ -9,8 +9,41 @@ Om de koppeling tussen het ESP32 device en *ROS2 Jazzy* tot stand te brengen, ma
 ## Opdracht 1: Installeren en configureren van microROS-agent
 Voordat we de ESP32 kunnen programmeren, moeten we ervoor zorgen dat de microROS-agent correct is geïnstalleerd en geconfigureerd op je computer. De microROS-agent fungeert als een brug tussen de microcontroller en het ROS2-ecosysteem, waardoor de data van de ultrasoon sensor kan worden gepubliceerd op een ROS2 topic.
 
- Installeer micro-ros-agent opnieuw met volgend script:
- [Install Microros Agent](https://github.com/GerardHarkema/railtrack/blob/jazzy/scripts/install_microros_agent.sh)  
+De microROS-agent kan worden geïnstalleerd en geconfigureerd met de volgende stappen:
+```bash
+mkdir -p ~/microROS_agent_ws/src
+cd ~/microROS_agent_ws/src
+sudo apt update
+sudo apt install -y ros-jazzy-micro-ros*
+
+# Verkrijg de juiste ROS2 distributie
+git clone -b jazzy https://github.com/micro-ROS/micro-ROS-Agent.git
+
+cd ..
+# Build de microROS agent
+colcon build --symlink-install
+source install/setup.bash
+echo "source ~/microROS_agent_ws/install/setup.bash" >> ~/.bashrc
+```
+:::{note}
+Alternatief als micro ros-agent niet werkt:
+```bash
+cd ~
+rm -fr ~/microROS_agent_ws
+sudo apt remove -y ros-jazzy-micro-ros*
+```
+
+verwijder de regel "source ~/microROS_agent_ws/install/setup.bash" uit ~/.bashrc(een van de laatste regels) met:
+```
+gedit ~/.bashrc
+```
+
+
+ installeer micro-ros-agent opnieuw met volgend script:
+ [install_microros_agent](https://github.com/GerardHarkema/railtrack/blob/jazzy/scripts/install_microros_agent.sh)  
+
+:::
+
 
 ## Opdracht 2: Aansluiten van de ultrasoon sensor op de ESP32
 In deze opdracht gebruiken we een ESP32C3 (Super-mini) device, maar je kunt ook een ander ESP32 device gebruiken. Zorg er wel voor dat je de juiste pin-aansluitingen gebruikt in je code.
