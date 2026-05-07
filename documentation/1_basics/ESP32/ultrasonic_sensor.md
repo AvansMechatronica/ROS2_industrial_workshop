@@ -25,8 +25,16 @@ colcon build --symlink-install
 source install/setup.bash
 echo "source ~/microROS_agent_ws/install/setup.bash" >> ~/.bashrc
 ```
+:::{note}
+Alternatief als micro ros-agent niet werkt:
+```bash
+cd ~
+rm -fr ~/microROS_agent_ws
+```
+ installeer micro-ros-agent opnieuw met volgend script:
+ [install_microros_agent](https://github.com/GerardHarkema/railtrack/blob/jazzy/scripts/install_microros_agent.sh)  
 
-
+:::
 
 
 ## Opdracht 2: Aansluiten van de ultrasoon sensor op de ESP32
