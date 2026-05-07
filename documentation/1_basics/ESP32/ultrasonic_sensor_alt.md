@@ -9,40 +9,27 @@ Om de koppeling tussen het ESP32 device en *ROS2 Jazzy* tot stand te brengen, ma
 ## Opdracht 1: Installeren en configureren van microROS-agent
 Voordat we de ESP32 kunnen programmeren, moeten we ervoor zorgen dat de microROS-agent correct is geïnstalleerd en geconfigureerd op je computer. De microROS-agent fungeert als een brug tussen de microcontroller en het ROS2-ecosysteem, waardoor de data van de ultrasoon sensor kan worden gepubliceerd op een ROS2 topic.
 
-De microROS-agent kan worden geïnstalleerd en geconfigureerd met de volgende stappen:
-```bash
-mkdir -p ~/microROS_agent_ws/src
-cd ~/microROS_agent_ws/src
-sudo apt update
-sudo apt install -y ros-jazzy-micro-ros*
+Installeer micro-ros-agent opnieuw met volgend script:
+ ```bash
+source /opt/ros/$ROS_DISTRO/setup.bash
 
-# Verkrijg de juiste ROS2 distributie
-git clone -b jazzy https://github.com/micro-ROS/micro-ROS-Agent.git
+mkdir uros_ws && cd uros_ws
 
-cd ..
-# Build de microROS agent
-colcon build --symlink-install
-source install/setup.bash
-echo "source ~/microROS_agent_ws/install/setup.bash" >> ~/.bashrc
+git clone -b $ROS_DISTRO https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
+
+rosdep update && rosdep install --from-paths src --ignore-src -y
+
+colcon build
+
+source install/local_setup.bash
+
+ros2 run micro_ros_setup create_agent_ws.sh
+ros2 run micro_ros_setup build_agent.sh
+
+echo "source ~/uros_ws/install/local_setup.bash" >> $HOME/.bashrc
+
+source install/local_setup.bash
 ```
-:::{note}
-Alternatief als micro ros-agent niet werkt:
-```bash
-cd ~
-rm -fr ~/microROS_agent_ws
-sudo apt remove -y ros-jazzy-micro-ros*
-```
-
-verwijder de regel "source ~/microROS_agent_ws/install/setup.bash" uit ~/.bashrc(een van de laatste regels) met:
-```
-gedit ~/.bashrc
-```
-
-
- installeer micro-ros-agent opnieuw met volgend script:
- [install_microros_agent](https://github.com/GerardHarkema/railtrack/blob/jazzy/scripts/install_microros_agent.sh)  
-
-:::
 
 
 ## Opdracht 2: Aansluiten van de ultrasoon sensor op de ESP32
