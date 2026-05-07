@@ -4,8 +4,12 @@ In deze module leer je hoe je een robotarm kunt besturen met behulp van ROS2. We
 
 We beginnen met het verkennen van de virtuele omgeving
 ```bash
-ros2 launch manipulation view_environment.launch.py
+ros2 launch manipulation environment.launch.py
 ```
+
+:::{note}
+Als er in RVIZ geen robotmodel te zien is, gebruik dan `File`, `Open Config` en selecteer het bestand `environment.rviz` in de map `rviz`.
+:::
 
 ## Opdracht 1
 In deze opdracht leer je hoe je met een programma de robot kunt aansturen naar een van de poses die je in de setup assistant hebt aangemaakt.
