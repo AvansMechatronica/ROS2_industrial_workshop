@@ -30,7 +30,15 @@ Alternatief als micro ros-agent niet werkt:
 ```bash
 cd ~
 rm -fr ~/microROS_agent_ws
+sudo apt remove ros-jazzy-micro-ros*
 ```
+
+verwijder de regel "source ~/microROS_agent_ws/install/setup.bash" uit ~/.bashrc(een van de laatste regels) met:
+```
+gedit ~/.bashrc
+```
+
+
  installeer micro-ros-agent opnieuw met volgend script:
  [install_microros_agent](https://github.com/GerardHarkema/railtrack/blob/jazzy/scripts/install_microros_agent.sh)  
 
