@@ -13,6 +13,7 @@ De microROS-agent kan worden geïnstalleerd en geconfigureerd met de volgende st
 ```bash
 mkdir -p ~/microROS_agent_ws/src
 cd ~/microROS_agent_ws/src
+sudo apt update
 sudo apt install -y ros-jazzy-micro-ros*
 
 # Verkrijg de juiste ROS2 distributie
@@ -24,6 +25,8 @@ colcon build --symlink-install
 source install/setup.bash
 echo "source ~/microROS_agent_ws/install/setup.bash" >> ~/.bashrc
 ```
+
+
 
 
 ## Opdracht 2: Aansluiten van de ultrasoon sensor op de ESP32
