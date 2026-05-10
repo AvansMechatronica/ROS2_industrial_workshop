@@ -22,5 +22,22 @@ Openen van een bestanden moveit config:
 ros2 launch demo_moveit_config ros2 setup_assistant.launch.py
 ```
 
+## Demonstratie van manipulatie opdrachten
+```
+ros2 launch manipulation environment.launch.py
+```
+
+### Met gazebo
+
+```
+ros2 launch manipulation environment_w_gazebo.launch.py
+```
+
+### MoveIt configuratie
+
+```
+ros2 launch manipulation_moveit_config setup_assistant.launch.py
+```
+
 
 
