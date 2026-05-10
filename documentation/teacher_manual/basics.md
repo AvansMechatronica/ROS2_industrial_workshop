@@ -163,6 +163,57 @@ Interface show:
 ros2 interface show sensor_msgs/Range
 ```
 
+# Services
+
+
+Start add two ints service server:
+
+```
+ros2 run demo_nodes_py add_two_ints_server
+```
+
+Edit add two ints server code:
+```
+gedit /opt/ros/jazzy/share/launch_testing_ros/examples/add_two_ints_server.py
+```
+
+Vraag een lijst van services op:
+```
+ros2 service list
+```
+
+Vraag informatie op over een service:
+```
+ros2 service info /add_two_ints
+```
+
+Vraag informatie op over een service interface:
+```
+ros2 interface show example_interfaces/srv/AddTwoInts
+```
+
+
+Roep de service aan vanaf de command line:
+
+```
+ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 1, b: 2}"
+```
+
+Edit add two ints client code:
+```
+gedit /opt/ros/jazzy/share/launch_testing_ros/examples/add_two_ints_client.py
+```
+
+Roep de service aan vanaf een node:
+```
+ros2 run demo_nodes_py add_two_ints_client
+```
+
+# Action Servers
+On request
+
+# Launch Files
+On request
 
 
 
