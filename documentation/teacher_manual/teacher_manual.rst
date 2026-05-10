@@ -9,9 +9,9 @@ Docenten Handleiding
    overview.md
    uitwerkingen.md
    basics.md
+   manipulation.md
    urdf.md
-   maniplation.md
-   transfeurframes.md
+   transferframes.md
    navigation.md
    cases.md
 
