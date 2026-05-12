@@ -1,5 +1,9 @@
 # Manipulation  
 
+## Laat de virtuele omgeving zien
+```
+ros2 launch manipulation environment.launch.py
+```
 
 ## MoveIt setup assistant
 ```
