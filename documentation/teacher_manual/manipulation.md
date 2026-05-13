@@ -57,4 +57,3 @@ ros2 launch manipulation environment_w_gazebo.launch.py
 ```
 ros2 launch manipulation spawn_battery.launch.py
 ```
-
