@@ -43,5 +43,18 @@ ros2 launch manipulation environment_w_gazebo.launch.py
 ros2 launch manipulation_moveit_config setup_assistant.launch.py
 ```
 
+### Start environment
+```
+ros2 launch manipulation environment.launch.py
+```
 
+### Start environment met gazebo
+```
+ros2 launch manipulation environment_w_gazebo.launch.py
+```
+
+### Spawn a component in the environment
+```
+ros2 launch manipulation spawn_battery.launch.py
+```
 
