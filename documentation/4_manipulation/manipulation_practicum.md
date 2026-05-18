@@ -11,3 +11,11 @@ Deze robot zul je ook gebruiken bij de opdrachten in het vervolg van de module A
 ## Opdracht 1: Installeren van de robotarm
 Volg de  instructies beschreven in [uFactory Template Repository](https://avansmechatronica.github.io/my_ufactory_ROS2/) om de robotarm te installeren en te configureren. Zorg ervoor dat je alle stappen zorgvuldig volgt, zodat de robotarm correct is geïnstalleerd en klaar is voor gebruik.
 
+## Opdracht 2: Toevoegen van een robot pose
+Voeg met de MoveIt setup assistant een pose toe aan de robot. Deze pose kan bijvoorbeeld een specifieke positie zijn die de robotarm moet bereiken. Gebruik de MoveIt setup assistant om deze pose te definiëren en op te slaan in de configuratie van de robot. Test vervolgens of je deze pose kunt bereiken met de robotarm door een plan te maken en uit te voeren in Rviz.
+
+## Opdracht 3: Aansturen van de robotarm met Python`
+Bestudeer het Python programma in de `my_uf_demo` package. Dit programma bevat een voorbeeld van hoe je de robotarm kunt aansturen met Python. Pas dit programma aan zodat het de robotarm naar de pose beweegt die je in opdracht 2 hebt toegevoegd. Zorg ervoor dat je de juiste ROS2 commando's gebruikt om de robotarm te bewegen en test je programma om te zien of het werkt.
+
+## Opdracht 4: Toevoegen van een object in de omgeving
+Voeg een object toe aan de omgeving van de robotarm. Dit kun je doen door een object in RVIZ te plaatsen. Maak vervolgens een plan om de robotarm naar een positie te bewegen die dicht bij het object is, zonder het object te raken. Test je plan in RVIZ en zorg ervoor dat de robotarm veilig beweegt zonder het object te raken.
