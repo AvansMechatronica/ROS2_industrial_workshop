@@ -19,3 +19,10 @@ Bestudeer het Python programma in de `my_uf_demo` package. Dit programma bevat e
 
 ## Opdracht 4: Toevoegen van een object in de omgeving
 Voeg een object toe aan de omgeving van de robotarm. Dit kun je doen door een object in RVIZ te plaatsen. Maak vervolgens een plan om de robotarm naar een positie te bewegen die dicht bij het object is, zonder het object te raken. Test je plan in RVIZ en zorg ervoor dat de robotarm veilig beweegt zonder het object te raken.
+Sla de RVIZ-configuratie op.
+
+## Opdracht 5: Python beweging met vermijding van het object
+Pas het Python programma aan zodat de robotarm een beweging maakt naar een doelpositie, terwijl het object in de omgeving wordt vermeden. Gebruik de MoveIt planning functionaliteit om een pad te plannen dat het object ontwijkt. Test je aangepaste programma om te zien of de robotarm succesvol naar de doelpositie beweegt zonder het object te raken.
+:::{tip}
+Maak 2 poses in translation en quaternion formaat die je hebt gebruikt in deze opdracht. Gebruik deze poses om de robot te bewegen om het object heen.
+:::
