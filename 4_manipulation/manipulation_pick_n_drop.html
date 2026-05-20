@@ -1,0 +1,234 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROS2 industrial manipulation Pick and Drop &mdash; Avans: ROS2 Industrial 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Practicum Manipulatie" href="manipulation_practicum.html" />
+    <link rel="prev" title="ROS2 industrial manipulation Planning" href="manipulation_planning.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: ROS2 Industrial
+              <img src="../_static/avans-hogeschool.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../general/general.html">Algemene informatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_basics/basics.html">ROS2 Basics Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_urdf/urdf.html">ROS2 URDF Workshop</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="manipulation.html">ROS2 Manipulation Workshop</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="manipulation_config.html">ROS2 industrial manipulation setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation_planning.html">ROS2 industrial manipulation Planning</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ROS2 industrial manipulation Pick and Drop</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-1-verplaatsen-van-de-battery-op-de-tafel-naar-en-bak">Opdracht 1 Verplaatsen van de battery op de tafel naar en bak</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#moveit2-setup">1.1 Moveit2 setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pas-het-programma-aan">1.2 Pas het programma aan</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-2-battery-oppakken-met-de-vacuum-gripper">Opdracht 2 Battery oppakken met de vacuum gripper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-3-vereenvoudigen-van-het-script">Opdracht 3: Vereenvoudigen van het script</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation_practicum.html">Practicum Manipulatie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../5_transferframes/transferframes.html">ROS2 Transferframes Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">Veel gestelde vragen (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../teacher_manual/teacher_manual.html">Docenten Handleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: ROS2 Industrial</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="manipulation.html">ROS2 Manipulation Workshop</a></li>
+      <li class="breadcrumb-item active">ROS2 industrial manipulation Pick and Drop</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/4_manipulation/manipulation_pick_n_drop.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ros2-industrial-manipulation-pick-and-drop">
+<h1>ROS2 industrial manipulation Pick and Drop<a class="headerlink" href="#ros2-industrial-manipulation-pick-and-drop" title="Link to this heading"></a></h1>
+<p>In deze opdrachten gaan we een robotarm gebruiken om object(in dit geval een battery) op te pakken en te verplaatsen naar een andere locatie, in dit geval een bak.</p>
+<p>Je kunt de simulatie omgeving starten met de volgende commando’s:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>manipulation<span class="w"> </span>environment_w_gazebo.launch.py
+</pre></div>
+</div>
+<p>Je zult zien dat er naast RVIZ ook Gazebo wordt gestart. Er zit enig verschil tussen de twee omgevingen. Gazebo is een fysische simulator, dus objecten kunnen vallen, rollen, botsen etc. RVIZ is een visualisatie tool en heeft geen fysische eigenschappen.</p>
+<p>In Gazebo kun je nu een object spawnen met de volgende commando’s:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>manipulation<span class="w"> </span>spawn_battery.launch.py
+</pre></div>
+</div>
+<p>Je ziet nu een battery op de tafel verschijnen in Gazebo. Dit opject is nog niet zichtbaar in RVIZ. Dit komt omdat RVIZ alleen de robot en de omgeving laat zien, maar niet de objecten die in Gazebo zijn gespawnd. We zullen dit later bij de opdrachten van transfer frames behandelen.
+De Opdracht is in twee delen opgesplitst.</p>
+<ol class="arabic simple">
+<li><p>Het bewegen van de robot arm naar de battery toe en vervolgens naar de bak.</p></li>
+<li><p>Het daadwerkelijk oppakken van de battery en droppen van de battery in de bak door het aansturen van de vacuum-gripper.</p></li>
+</ol>
+<p>Sluit de simulatie af met CTRL+C in de terminal waar je de simulatie hebt gestart.</p>
+<section id="opdracht-1-verplaatsen-van-de-battery-op-de-tafel-naar-en-bak">
+<h2>Opdracht 1 Verplaatsen van de battery op de tafel naar en bak<a class="headerlink" href="#opdracht-1-verplaatsen-van-de-battery-op-de-tafel-naar-en-bak" title="Link to this heading"></a></h2>
+<p>In deze opdracht ga je de robot arm bewegen naar de battery en vervolgens naar de bak. Hiervoor kun je gebruik maken van de moveit2 commando’s die we in de vorige opdrachten hebben behandeld.</p>
+<section id="moveit2-setup">
+<h3>1.1 Moveit2 setup<a class="headerlink" href="#moveit2-setup" title="Link to this heading"></a></h3>
+<p>De robot configuratie kun je vinden in de package manipulation_moveit_config.</p>
+<ol class="arabic simple">
+<li><p>Open de setup_assistant</p></li>
+<li><p>Voeg een extra robot-pose toe met de naam “drop”, de pose moet zo zijn dat de gripper boven de bak hangt</p></li>
+<li><p>Sla de configuratie op, zorg ervoor dat alleen het srdf-bestand wordt overschreven.</p></li>
+</ol>
+</section>
+<section id="pas-het-programma-aan">
+<h3>1.2 Pas het programma aan<a class="headerlink" href="#pas-het-programma-aan" title="Link to this heading"></a></h3>
+<p>De battery staat op de tafel op de volgende positie:</p>
+<ul class="simple">
+<li><p>x: 0.4</p></li>
+<li><p>y: -0.4</p></li>
+<li><p>z: 0.18</p></li>
+<li><p>roll: 3.1415927</p></li>
+<li><p>pitch: 0.0</p></li>
+<li><p>yaw: 0.0</p></li>
+</ul>
+<p>Deze positie is relatief ten opzichte van de robot basis.</p>
+<p>De robot moet de volgende stappen uitvoeren:</p>
+<ol class="arabic simple">
+<li><p>Beweeg naar de “home” positie</p></li>
+<li><p>Beweeg naar de positie boven de battery (x: 0.4, y: -0.4, z: (0.18 + 0.12))</p></li>
+<li><p>Beweeg naar de positie van de battery (x: 0.4, y: -0.4, z: 0.18)</p></li>
+<li><p>Beweeg terug naar de positie boven de battery (x: 0.4, y: -0.4, z: (0.18 + 0.12))</p></li>
+<li><p>Beweeg naar de “home” positie</p></li>
+<li><p>Beweeg naar de “drop” positie</p></li>
+<li><p>Beweeg terug naar de “home” positie</p></li>
+<li><p>Sluit het programma af</p></li>
+</ol>
+<p>Instructies:</p>
+<ol class="arabic simple">
+<li><p>Pas het pyhton script “assignment2.py” van de package manipulation aan op de plaatsen van TODO 1.</p></li>
+<li><p>Voeg de “assignment2.py” aan de setup.py van de pacakge manipulation toe zodat deze als een commando kan worden uitgevoerd.</p></li>
+<li><p>Start de simulatie omgeving zoals hierboven beschreven.</p></li>
+<li><p>Run het script met het volgende commando:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_to_battery</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pose</span><span class="p">,</span> <span class="n">z_offset</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">):</span>
+    <span class="c1"># beweeg naar de positie van het battery met z_offset</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="opdracht-2-battery-oppakken-met-de-vacuum-gripper">
+<h2>Opdracht 2 Battery oppakken met de vacuum gripper<a class="headerlink" href="#opdracht-2-battery-oppakken-met-de-vacuum-gripper" title="Link to this heading"></a></h2>
+<p>In deze opdracht ga je de robot arm gebruiken om de battery op te pakken en te verplaatsen. Hiervoor moet je de gripper aansturen. De gripper kan worden aangestuurd door een waarde naar het <code class="docutils literal notranslate"><span class="pre">&quot;/vacuum_gripper/control/enable&quot;</span></code> te sturen.</p>
+<p>Start de simulatie omgeving zoals hierboven beschreven.</p>
+<p>Probeer met de <code class="docutils literal notranslate"><span class="pre">ros2</span> <span class="pre">topic</span></code> commando’s informatie te krijgen over de gripper. Belangrijk hierbij is dat je het message type achterhaald.</p>
+<p>Pas het script “assignament2.py” aan:
+In het script is een al voorbereide class VacuumGripper(Node) gemaakt. Deze class heeft de volgende functies:</p>
+<ul class="simple">
+<li><p><strong>init</strong>(): initialiseerd de node en de publisher van de gripper</p></li>
+<li><p>pull(): stuurt een specefieke waarde het topic van de gripper om deze te activeren</p></li>
+<li><p>release(): stuurt een specefieke waarde het topic van de gripper om deze te deactiveren</p></li>
+</ul>
+<p>Voeg aan het script bij de TODO 2’s de code aan om: de gripper te laten functioneren.</p>
+<p>Test je script en kijk of de robot de battery  oppakt en in de bak laat vallen.</p>
+<ul class="simple">
+<li><p>pull(): stuurt een specifieke waarde het topic van de gripper om deze te activeren</p></li>
+<li><p>release(): stuurt een specifieke waarde het topic van de gripper om deze te deactiveren</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>manipulation<span class="w"> </span>spawn_battery.launch.py
+</pre></div>
+</div>
+</section>
+<section id="opdracht-3-vereenvoudigen-van-het-script">
+<h2>Opdracht 3: Vereenvoudigen van het script<a class="headerlink" href="#opdracht-3-vereenvoudigen-van-het-script" title="Link to this heading"></a></h2>
+<p>Je zult in je script zien dat je een aantal keer dezelfde code gebruikt om naar een pose te bewegen. Denk hierbij bijvoorbeeld aan de herhaalde reeks bewegingen om eerst boven de battery te gaan staan, vervolgens naar de battery toe te bewegen, en daarna weer terug naar een veilige hoogte, of een vergelijkbare reeks naar de bak. Probeer deze herhaalde code te vereenvoudigen door een functie te maken die deze bewegingen uitvoert. Deze functie moet de volgende parameters hebben:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_to_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">translation</span><span class="p">,</span> <span class="n">rotation</span><span class="p">,</span> <span class="n">z_offset</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Deze functie is al leeg gemaakt in het script in de klasse <code class="docutils literal notranslate"><span class="pre">manipulatorController(Node)</span></code>(zie bij TODO 3). Vul deze functie aan zodat deze de bewegingen uitvoert. Pas vervolgens de rest van het script aan zodat deze gebruik maakt van deze functie.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="manipulation_planning.html" class="btn btn-neutral float-left" title="ROS2 industrial manipulation Planning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="manipulation_practicum.html" class="btn btn-neutral float-right" title="Practicum Manipulatie" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brief instructions programming ESP32 devices with VisualCode/Platform IO &mdash; Avans: ROS2 Industrial 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Zoeken" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Avans: ROS2 Industrial
+              <img src="../../_static/avans-hogeschool.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../general/general.html">Algemene informatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics.html">ROS2 Basics Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2_urdf/urdf.html">ROS2 URDF Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4_manipulation/manipulation.html">ROS2 Manipulation Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../5_transferframes/transferframes.html">ROS2 Transferframes Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references/references.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faq.html">Veel gestelde vragen (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../teacher_manual/teacher_manual.html">Docenten Handleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Avans: ROS2 Industrial</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Brief instructions programming ESP32 devices with VisualCode/Platform IO</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/1_basics/ESP32/instructions_programming_esp32.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="brief-instructions-programming-esp32-devices-with-visualcode-platform-io">
+<h1>Brief instructions programming ESP32 devices with VisualCode/Platform IO<a class="headerlink" href="#brief-instructions-programming-esp32-devices-with-visualcode-platform-io" title="Link to this heading"></a></h1>
+<p>In this chapter the most important functions of programming an ESP32 device with Visual Code and the PlatformIO plugin are described.</p>
+<ol class="arabic simple">
+<li><p>Start Visual code</p></li>
+<li><p>Enable PlatformIO environment (see: Visual Code/PlatformIO documentation)</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://code.visualstudio.com/docs">Visual Code docs</a></p></li>
+<li><p><a class="reference external" href="https://docs.platformio.org/en/latest/core/index.html">PlatformIO docs</a></p></li>
+</ul>
+</li>
+<li><p>Select ESP32 workspace:</p>
+<ul class="simple">
+<li><p><strong>File–&gt;Open Workspace from File…–&gt;esp32.code-workspace</strong> (in the ESP32 folder of this repository)</p></li>
+</ul>
+</li>
+</ol>
+<p>(<em>Warning: Sometimes Visual Code display’s it’s dialogs behind the main window, toggle to the dialog window</em>)</p>
+<p><img alt="Image" src="../../_images/ScreenshotVisualCodeLayout.png" />
+Commands can be given over the status bar at the buttom-side of the Visual Code Windows, see below.</p>
+<p><img alt="Image" src="../../_images/ScreenshotStatusBar.png" /></p>
+<ol class="arabic simple" start="4">
+<li><p>Select project to program the ESP32, by hoving over the status bar and click the <strong>Switch PlatormIO project Environment</strong>.</p></li>
+</ol>
+<p><img alt="Image" src="../../_images/ScreenshotSelectProjectStatusBar.png" />
+Next, select project from Projects list window:</p>
+<p><img alt="Image" src="../../_images/ScreenshotSelectProject.png" /></p>
+<ol class="arabic simple" start="5">
+<li><p>Build project, by hoving over the status bar and click the <strong>Build</strong> button, no erros should appear in the Therminal</p></li>
+</ol>
+<p><img alt="Image" src="../../_images/ScreenshotCompile.png" /></p>
+<ol class="arabic simple" start="6">
+<li><p>Connect ESP32 device to the computer throug a USB-cable.</p></li>
+<li><p>Upload the program to the ESP32, by hoving over the status bar and click the <strong>Upload</strong> button, no erros should appear in the Therminal</p></li>
+</ol>
+<p><img alt="Image" src="../../_images/ScreenshotUpload.png" /></p>
+<ol class="arabic simple" start="7">
+<li><p>Alternaty you can monitor the output of the program in the serial monitor window, by hoving over the status bar and click the <strong>Serial Monitor</strong> button.</p></li>
+</ol>
+<p><img alt="Image" src="../../_images/ScreenshotTerminal.png" /></p>
+<p><a class="reference internal" href="ultrasonic_sensor.html"><span class="std std-doc">back</span></a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

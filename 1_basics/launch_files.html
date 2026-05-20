@@ -1,0 +1,172 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROS2 Launch files &mdash; Avans: ROS2 Industrial 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="ROS2 Creating packages for Python applications" href="creating_packages_for_python.html" />
+    <link rel="prev" title="ROS2 Parameters" href="parameters.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: ROS2 Industrial
+              <img src="../_static/avans-hogeschool.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../general/general.html">Algemene informatie</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">ROS2 Basics Workshop</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="packages_and_nodes.html">ROS2 Packages and Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics.html">ROS Topics: Publishers and Subscribers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">ROS2 Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">ROS2 Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parameters.html">ROS2 Parameters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ROS2 Launch files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-1-uitbreiding-van-het-launch-bestand">Opdracht 1: Uitbreiding van het launch bestand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-2-testen">Opdracht 2: Testen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="creating_packages_for_python.html">ROS2 Creating packages for Python applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESP32/ultrasonic_sensor.html">Topics op een extern Embedded Device</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_urdf/urdf.html">ROS2 URDF Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_manipulation/manipulation.html">ROS2 Manipulation Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_transferframes/transferframes.html">ROS2 Transferframes Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">Veel gestelde vragen (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../teacher_manual/teacher_manual.html">Docenten Handleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: ROS2 Industrial</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="basics.html">ROS2 Basics Workshop</a></li>
+      <li class="breadcrumb-item active">ROS2 Launch files</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/1_basics/launch_files.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ros2-launch-files">
+<h1>ROS2 Launch files<a class="headerlink" href="#ros2-launch-files" title="Link to this heading"></a></h1>
+<p>In de opdrachten van <code class="docutils literal notranslate"><span class="pre">ROS2</span> <span class="pre">topics</span></code> en <code class="docutils literal notranslate"><span class="pre">ROS2</span> <span class="pre">services</span></code> hebben we al gezien hoe we nodes kunnen starten vanuit de command line. Maar wat als we meerdere nodes tegelijk willen starten? Dan kunnen we gebruik maken van launch files.</p>
+<p>In de launch file <code class="docutils literal notranslate"><span class="pre">assignment1_2.launch.py</span></code> van de package <code class="docutils literal notranslate"><span class="pre">range_sensor</span></code> (in de map <code class="docutils literal notranslate"><span class="pre">launch</span></code>) zijn al een aantal nodes gedefinieerd. Deze nodes worden automatisch gestart wanneer we de launch file uitvoeren.</p>
+<p>Dit zijn de nodes die worden gestart:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sensor_info_publisher</span></code>: Deze node simuleert een afstandssensor en publiceert de gemeten afstand op het topic <code class="docutils literal notranslate"><span class="pre">sensor_info</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">box_height_meters</span></code>: Deze node publiceert de hoogte van de doos in meters op het topic <code class="docutils literal notranslate"><span class="pre">box_height</span></code>.</p></li>
+</ul>
+<p>Deze nodes heb je gemaakt in de opdrachten van <code class="docutils literal notranslate"><span class="pre">ROS2</span> <span class="pre">topics</span></code>.</p>
+<p>Om de launch file uit te voeren, gebruik je het volgende commando in de terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>range_sensor<span class="w"> </span>assignment1_2.launch.py
+</pre></div>
+</div>
+<p>Wanneer je dit commando uitvoert, zullen beide nodes automatisch starten en zullen ze de respectievelijke topics blijven publiceren totdat je de launch file stopt (met Ctrl+C).</p>
+<p>Je kunt de output van de nodes bekijken in de terminal waar je de launch file hebt uitgevoerd. Je zult zien dat beide nodes actief zijn en hun berichten blijven publiceren.</p>
+<p>Je kunt in een andere terminal ook de nodes die gestart zijn bekijken met het volgende commando:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>node<span class="w"> </span>list
+</pre></div>
+</div>
+<p>Natuurlijk kun je ook de topics bekijken die worden gepubliceerd:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>list
+</pre></div>
+</div>
+<section id="opdracht-1-uitbreiding-van-het-launch-bestand">
+<h2>Opdracht 1: Uitbreiding van het launch bestand<a class="headerlink" href="#opdracht-1-uitbreiding-van-het-launch-bestand" title="Link to this heading"></a></h2>
+<p>Breid het ‘assignment1_2.launch.py’ bestand uit met de node die je hebt gemaakt in <code class="docutils literal notranslate"><span class="pre">ROS2</span> <span class="pre">services</span></code></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Gebruik als voorbeeld de nodes die al in het launch bestand staan. Je kunt deze nodes kopiëren en aanpassen voor jouw nieuwe node.</p>
+</div>
+</section>
+<section id="opdracht-2-testen">
+<h2>Opdracht 2: Testen<a class="headerlink" href="#opdracht-2-testen" title="Link to this heading"></a></h2>
+<p>Start de launch file en controleer of alle nodes correct worden gestart. Gebruik de terminal om te controleren of de topics worden gepubliceerd en of de service correct werkt. Je kunt ook gebruik maken van <code class="docutils literal notranslate"><span class="pre">rqt_graph</span></code> om de communicatiestromen tussen de nodes te visualiseren.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="parameters.html" class="btn btn-neutral float-left" title="ROS2 Parameters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="creating_packages_for_python.html" class="btn btn-neutral float-right" title="ROS2 Creating packages for Python applications" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

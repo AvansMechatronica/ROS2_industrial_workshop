@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URDF &mdash; Avans: ROS2 Industrial 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Transferframes" href="transferframes.html" />
+    <link rel="prev" title="Manipulation" href="manipulation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: ROS2 Industrial
+              <img src="../_static/avans-hogeschool.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../general/general.html">Algemene informatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_basics/basics.html">ROS2 Basics Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_urdf/urdf.html">ROS2 URDF Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_manipulation/manipulation.html">ROS2 Manipulation Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_transferframes/transferframes.html">ROS2 Transferframes Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">Veel gestelde vragen (FAQ)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="teacher_manual.html">Docenten Handleiding</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Inleiding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uitwerkingen.html">Uitwerkingen van de opdrachten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">ROS Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#ros-topics">ROS Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#interfaces">Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#action-servers">Action Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#launch-files">Launch Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation.html">Manipulation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">URDF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#urdf-demo">URDF Demo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#uitvoeing-van-de-demo">Uitvoeing van de demo</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#xacro">Xacro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#urdf-solution">URDF Solution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="transferframes.html">Transferframes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigation.html">Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cases.html">Cases</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: ROS2 Industrial</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="teacher_manual.html">Docenten Handleiding</a></li>
+      <li class="breadcrumb-item active">URDF</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/teacher_manual/urdf.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="urdf">
+<h1>URDF<a class="headerlink" href="#urdf" title="Link to this heading"></a></h1>
+<p><strong>Under Construction</strong></p>
+<div class="admonition caution">
+<p class="admonition-title">Pas op</p>
+<p>Verwijder COLCON_IGNORE voor aanvang van de demonstratie ut de pacakge <code class="docutils literal notranslate"><span class="pre">urdf_demo</span></code> in de workspace. En bouw de workspace opnieuw. Vergeet niet om na het bouwen de workspace opnieuw te sourcen.</p>
+</div>
+<section id="urdf-demo">
+<h2>URDF Demo<a class="headerlink" href="#urdf-demo" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>urdf_demo<span class="w"> </span>view_demo.launch.py
+</pre></div>
+</div>
+<section id="uitvoeing-van-de-demo">
+<h3>Uitvoeing van de demo<a class="headerlink" href="#uitvoeing-van-de-demo" title="Link to this heading"></a></h3>
+<p>Voeg vanuit het soultion.urdf.xacro bestand aan het demo.urdf.xacro bestand in stappen toe toe:</p>
+<section id="mounting-plate-link">
+<h4>Mounting plate link<a class="headerlink" href="#mounting-plate-link" title="Link to this heading"></a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;mountingplate_link&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;visual&gt;</span>
+<span class="w">      </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0 0 0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;geometry&gt;</span>
+<span class="w">        </span><span class="nt">&lt;box</span><span class="w"> </span><span class="na">size=</span><span class="s">&quot;0.6 0.6 0.024&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/geometry&gt;</span>
+<span class="w">      </span><span class="nt">&lt;material</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;red&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/visual&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/link&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="mounting-plate-joint">
+<h4>Mounting plate joint<a class="headerlink" href="#mounting-plate-joint" title="Link to this heading"></a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">&lt;joint</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;mountingplate_joint&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;fixed&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;-0.4 0.0 0.042&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;parent</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;baseplate_link&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;child</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;mountingplate_link&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/joint&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="base-link">
+<h4>Base link<a class="headerlink" href="#base-link" title="Link to this heading"></a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;base_link&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="base-link-joint">
+<h4>Base link joint<a class="headerlink" href="#base-link-joint" title="Link to this heading"></a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">&lt;joint</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;base_link_joint&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;fixed&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;parent</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;mountingplate_link&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;child</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;base_link&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0.0 0.0 0.01&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0.0 0.0 0.0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/joint&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="fanuc-robot-macro-include">
+<h4>Fanuc robot macro include<a class="headerlink" href="#fanuc-robot-macro-include" title="Link to this heading"></a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">&lt;xacro:include</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;$(find fanuc_robots)/urdf/lrmate200ic.urdf.xacro&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xacro:fanuc_lrmate200ic</span><span class="w"> </span><span class="na">prefix=</span><span class="s">&quot;robot_&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="robot-base-joint">
+<h4>Robot base joint<a class="headerlink" href="#robot-base-joint" title="Link to this heading"></a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">&lt;joint</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;robot_base_joint&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;fixed&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;parent</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;base_link&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;child</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;robot_base_link&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0.0 0.0 0.0&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0.0 0.0 0.0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/joint&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="enable-joint-state-publisher">
+<h4>Enable Joint State Publisher<a class="headerlink" href="#enable-joint-state-publisher" title="Link to this heading"></a></h4>
+<p>verwijder het commentaar van de volgende regel in de view_demo.launch.py</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># Nodes started by this launch file.</span>
+    <span class="n">nodes_to_start</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1">#joint_state_publisher_node,</span>
+        <span class="n">robot_state_publisher_node</span><span class="p">,</span>
+        <span class="n">rviz_node</span><span class="p">,</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="vaccuum-gripper-include">
+<h4>Vaccuum gripper include<a class="headerlink" href="#vaccuum-gripper-include" title="Link to this heading"></a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">&lt;xacro:include</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;$(find ros_industrial_support)/urdf/vacuum_gripper/vacuum_gripper.urdf.xacro&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;xacro:vacuum_gripper_urdf</span><span class="w"> </span><span class="na">prefix=</span><span class="s">&quot;vacuum_gripper_&quot;</span><span class="w"> </span><span class="na">joint_prefix=</span><span class="s">&quot;vacuum_gripper_joint&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="gripper-to-robot-joint">
+<h4>Gripper to robot joint<a class="headerlink" href="#gripper-to-robot-joint" title="Link to this heading"></a></h4>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">&lt;joint</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;gripper_to_robot&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;fixed&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;parent</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;robot_tool_link&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;child</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;vacuum_gripper_base_link&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/joint&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="xacro">
+<h2>Xacro<a class="headerlink" href="#xacro" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>urdf_tutorial<span class="w"> </span>xacro_demo<span class="w"> </span>-d<span class="w"> </span>demo.urdf.xacro
+<span class="sb">``</span>
+
+<span class="c1">## Checking the URDF</span>
+<span class="sb">```</span>bash
+ros2<span class="w"> </span>run<span class="w"> </span>urdf_tutorial<span class="w"> </span>check_urdf<span class="w"> </span>-d<span class="w"> </span>demo.urdf.xacro
+</pre></div>
+</div>
+</section>
+<section id="urdf-solution">
+<h2>URDF Solution<a class="headerlink" href="#urdf-solution" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>urdf_demo<span class="w"> </span>view_solution.launch.py
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="manipulation.html" class="btn btn-neutral float-left" title="Manipulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="transferframes.html" class="btn btn-neutral float-right" title="Transferframes" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

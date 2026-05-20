@@ -1,0 +1,220 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROS2 Transferframes Workshop &mdash; Avans: ROS2 Industrial 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Referenties" href="../references/references.html" />
+    <link rel="prev" title="Practicum Manipulatie" href="../4_manipulation/manipulation_practicum.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: ROS2 Industrial
+              <img src="../_static/avans-hogeschool.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../general/general.html">Algemene informatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_basics/basics.html">ROS2 Basics Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_urdf/urdf.html">ROS2 URDF Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_manipulation/manipulation.html">ROS2 Manipulation Workshop</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ROS2 Transferframes Workshop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-1-moveit2-setup">Opdracht 1: Moveit2 setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-2-pas-het-programma-aan-met-het-maken-van-een-foto">Opdracht 2: Pas het programma aan met het maken van een foto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-3-maak-de-basis-robot-bewegingen">Opdracht 3: Maak de basis robot bewegingen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-4-beweeg-naar-de-objecten">Opdracht 4: Beweeg naar de objecten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-5-pak-de-objecten-op-en-laat-ze-in-de-bak-vallen">Opdracht 5: Pak de objecten op en laat ze in de bak vallen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-6-verbeter-je-programma">Opdracht 6: Verbeter je programma</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">Veel gestelde vragen (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../teacher_manual/teacher_manual.html">Docenten Handleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: ROS2 Industrial</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ROS2 Transferframes Workshop</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/5_transferframes/transferframes.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ros2-transferframes-workshop">
+<h1>ROS2 Transferframes Workshop<a class="headerlink" href="#ros2-transferframes-workshop" title="Link to this heading"></a></h1>
+<p>In deze opdracht gaan we werken met transfer-frames. We gebruiken een robotarm in een gesimuleerde omgeving (Gazebo) om objecten op te pakken en te verplaatsen. De robotarm is uitgerust met een vacuum-grijper die objecten kan vastpakken. Er is een camera aanwezig die de positie van de objecten kan detecteren en doorgeven aan de robotarm.</p>
+<p>Je kunt de virtuele omgeving starten met de volgende commando’s:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>transferframes<span class="w"> </span>environment.launch.py<span class="w"> </span>
+</pre></div>
+</div>
+<p>Je zult zien dat Gazebo en RVIZ worden gestart. In de omgeving zie je een robotarm, een tafel en een camera.</p>
+<p>Met de camera kunnenwe de positie van objecten detecteren. De camera is gepositioneerd boven de tafel en kijkt naar beneden. De camera stuurt de gedetecteerde objectposities, na het nemen van een foto, door naar een ROS2-topic genaamd <code class="docutils literal notranslate"><span class="pre">/ros_industrial/sensors/custom_logical_camera/objects</span></code>. Dit topic bevat de coördinaten van de objecten in de wereld.</p>
+<div class="admonition caution">
+<p class="admonition-title">Pas op</p>
+<p>De camera is een zogenaamde “logical camera”. Dit betekent dat het geen echte beelden of foto’s maakt, maar in plaats daarvan de posities van objecten in de wereld doorgeeft. Dit is handig voor simulaties omdat het eenvoudiger is dan het verwerken van echte beelden.</p>
+</div>
+<p>Je kunt objecten op de tafel plaatsen door het volgende commando uit te voeren:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>transferframes<span class="w"> </span>spawn_parts.launch.py
+</pre></div>
+</div>
+<p>Je ziet ze nu verschijnen op de tafel in Gazebo, maar nog niet in RVIZ. Dit komt omdat de objecten nog geen frames hebben.</p>
+<p>Door het nemen van een foto met de camera, worden de objecten gedetecteerd en krijgen ze frames toegewezen. Dit gebeurt automatisch wanneer de camera een foto neemt. Je kunt dit doen door het volgende commando uit te voeren:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>ros_industrial_sensors<span class="w"> </span>take_photo.py
+</pre></div>
+</div>
+<p>Verken nu de frames in Rviz.</p>
+<p>In Rviz kun je nu de frames van de objecten zien. Elk object krijgt een uniek frame toegewezen, zoals <code class="docutils literal notranslate"><span class="pre">battery</span></code>, <code class="docutils literal notranslate"><span class="pre">pump</span></code>, etc. Deze frames geven de positie en oriëntatie van de objecten in de wereld aan(t.o.v. de camera).</p>
+<p>Gebruik het volgende commando om de frames te bekijken:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>tf2_tools<span class="w"> </span>view_frames<span class="w"> </span>
+</pre></div>
+</div>
+<p>Dit commando genereert een PDF-bestand genaamd <code class="docutils literal notranslate"><span class="pre">frames_&lt;date&gt;_&lt;time&gt;.pdf</span></code> in de huidige map. Open dit bestand (via de project-explorer) om de hiërarchie van frames te bekijken.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Sluiten van Gazebo en RVIZ doe je met Ctrl-C in de terminal waar je het gestart hebt.</p>
+</div>
+<section id="opdracht-1-moveit2-setup">
+<h2>Opdracht 1: Moveit2 setup<a class="headerlink" href="#opdracht-1-moveit2-setup" title="Link to this heading"></a></h2>
+<p>De robot configuratie kun je vinden in de package transferframes_moveit_config.</p>
+<ol class="arabic simple">
+<li><p>Open de setup_assistant</p></li>
+<li><p>Voeg een extra robot-pos toe met de naam “drop”, de pose moet zo zijn dat de gripper boven de bak hangt.</p></li>
+<li><p>Sla de configuratie op, zorg ervoor dat alleen het srdf-bestand wordt overschreven.</p></li>
+</ol>
+<p>In deze opdrachten maak je de code in het python script “assignment1.py” van de package transferframes af. Het script is al gedeeltelijk ingevuld met TODO x’s waar je de code moet aanvullen.</p>
+</section>
+<section id="opdracht-2-pas-het-programma-aan-met-het-maken-van-een-foto">
+<h2>Opdracht 2: Pas het programma aan met het maken van een foto<a class="headerlink" href="#opdracht-2-pas-het-programma-aan-met-het-maken-van-een-foto" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Vul in de TODO 1’s in het python script “assignment1.py” van de package transferframes.
+Maak een foto met de volgende code:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="p">,</span> <span class="n">photo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">take_photo</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Deze functie geeft twee waarden terug:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">result</span></code>: Dit is een boolean (True of False) die aangeeft of het maken van de foto succesvol was.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">photo</span></code>: Dit is een lijst van objecten die door de camera zijn gedetecteerd. Elk object in de lijst bevat informatie zoals de naam, positie en oriëntatie.</p></li>
+</ul>
+<p>Druk deze lijst vervolgens af met behulp van de volgende functie:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Test het script.</p>
+</section>
+<section id="opdracht-3-maak-de-basis-robot-bewegingen">
+<h2>Opdracht 3: Maak de basis robot bewegingen<a class="headerlink" href="#opdracht-3-maak-de-basis-robot-bewegingen" title="Link to this heading"></a></h2>
+<p>Vul in het assignment1.py script de TODO’s 2 aan zodanig dat de robot de basis bewegingen maakt. Er wordt nog niet bewogen naar de objecten op de tafel. Test het script.</p>
+</section>
+<section id="opdracht-4-beweeg-naar-de-objecten">
+<h2>Opdracht 4: Beweeg naar de objecten<a class="headerlink" href="#opdracht-4-beweeg-naar-de-objecten" title="Link to this heading"></a></h2>
+<p>Vul in het assignment1.py script de TODO’s 3 aan zodanig dat de robot naar de objecten beweegt, zonder dat de objecten worden opgepakt.
+Maak gebruik van de volgende tussenstappen</p>
+<ol class="arabic simple">
+<li><p>Beweeg naar een pre-grasp positie boven het object (0.2 m hoger dan het object)</p></li>
+<li><p>Beweeg naar de object positie</p></li>
+<li><p>Beweeg terug naar de pre-grasp positie(0.2 m hoger dan het object)</p></li>
+</ol>
+<p>Test het script.</p>
+</section>
+<section id="opdracht-5-pak-de-objecten-op-en-laat-ze-in-de-bak-vallen">
+<h2>Opdracht 5: Pak de objecten op en laat ze in de bak vallen<a class="headerlink" href="#opdracht-5-pak-de-objecten-op-en-laat-ze-in-de-bak-vallen" title="Link to this heading"></a></h2>
+<p>Vul in het assignment1.py script de TODO’s 4 aan zodanig dat de robot de objecten oppakt en in de bak laat vallen. De vacuum-grijper is al geïmplementeerd in de class “self.vacuum_gripper”. Test het script.</p>
+</section>
+<section id="opdracht-6-verbeter-je-programma">
+<h2>Opdracht 6: Verbeter je programma<a class="headerlink" href="#opdracht-6-verbeter-je-programma" title="Link to this heading"></a></h2>
+<p>Maak een functie zoals hier beschreven.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">move_to_part</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">part</span><span class="p">,</span> <span class="n">z_offset</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Deze functie moet de robot naar een object bewegen met een optionele z-offset. Gebruik deze functie in plaats van de code die je eerder hebt geschreven om naar de objecten te bewegen. Test het Python script.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="../4_manipulation/manipulation_practicum.html" class="btn btn-neutral float-left" title="Practicum Manipulatie" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="../references/references.html" class="btn btn-neutral float-right" title="Referenties" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

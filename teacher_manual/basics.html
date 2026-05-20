@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROS Basics &mdash; Avans: ROS2 Industrial 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Manipulation" href="manipulation.html" />
+    <link rel="prev" title="Uitwerkingen van de opdrachten" href="uitwerkingen.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: ROS2 Industrial
+              <img src="../_static/avans-hogeschool.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../general/general.html">Algemene informatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_basics/basics.html">ROS2 Basics Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_urdf/urdf.html">ROS2 URDF Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_manipulation/manipulation.html">ROS2 Manipulation Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_transferframes/transferframes.html">ROS2 Transferframes Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">Veel gestelde vragen (FAQ)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="teacher_manual.html">Docenten Handleiding</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Inleiding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uitwerkingen.html">Uitwerkingen van de opdrachten</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ROS Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ros-nodes">ROS Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ros-packages">ROS Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ros-workspace-map-structuur">ROS Workspace map structuur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ros-packages-map-structuur">ROS Packages map structuur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo-van-history-commando">Demo van history commando</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ros-topics">ROS Topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#talker">Talker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ros2-topics">ROS2 Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#listener">Listener</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo-sensor-publisher">Demo Sensor publisher</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#interfaces">Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#action-servers">Action Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#launch-files">Launch Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation.html">Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urdf.html">URDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transferframes.html">Transferframes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigation.html">Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cases.html">Cases</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: ROS2 Industrial</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="teacher_manual.html">Docenten Handleiding</a></li>
+      <li class="breadcrumb-item active">ROS Basics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/teacher_manual/basics.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ros-basics">
+<h1>ROS Basics<a class="headerlink" href="#ros-basics" title="Link to this heading"></a></h1>
+<section id="ros-nodes">
+<h2>ROS Nodes<a class="headerlink" href="#ros-nodes" title="Link to this heading"></a></h2>
+<p>Lijst van ROS commando’s:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="o">&lt;</span><span class="n">enter</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Lijst van ROS nodes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">node</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>Start een talker node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">run</span> <span class="n">demo_nodes_py</span> <span class="n">talker</span>
+</pre></div>
+</div>
+<p>Start een listener node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">run</span> <span class="n">demo_nodes_py</span> <span class="n">listener</span>
+</pre></div>
+</div>
+<p>Vraag een lijst van nodes op:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">node</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>Vraag informatie op over een node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">node</span> <span class="n">info</span> <span class="o">/</span><span class="n">talker</span>
+</pre></div>
+</div>
+<p>Uit de volgende opdracht in een nieuwe terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">run</span> <span class="n">rqt_graph</span> <span class="n">rqt_graph</span>
+</pre></div>
+</div>
+</section>
+<section id="ros-packages">
+<h2>ROS Packages<a class="headerlink" href="#ros-packages" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">pkg</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</section>
+<section id="ros-workspace-map-structuur">
+<h2>ROS Workspace map structuur<a class="headerlink" href="#ros-workspace-map-structuur" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">ros2_industrial_ws</span>
+<span class="n">tree</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">L</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+<section id="ros-packages-map-structuur">
+<h2>ROS Packages map structuur<a class="headerlink" href="#ros-packages-map-structuur" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">ros2_industrial_ws</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">ROS2_Industrial</span><span class="o">/</span><span class="mi">1</span><span class="n">_basics</span><span class="o">/</span><span class="n">range_sensor</span>
+<span class="n">tree</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+</section>
+<section id="demo-van-history-commando">
+<h2>Demo van history commando<a class="headerlink" href="#demo-van-history-commando" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">history</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ros-topics">
+<h1>ROS Topics<a class="headerlink" href="#ros-topics" title="Link to this heading"></a></h1>
+<section id="talker">
+<h2>Talker<a class="headerlink" href="#talker" title="Link to this heading"></a></h2>
+<p>Start een talker node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">run</span> <span class="n">demo_nodes_py</span> <span class="n">talker</span>
+</pre></div>
+</div>
+<section id="ros2-topics">
+<h3>ROS2 Topics<a class="headerlink" href="#ros2-topics" title="Link to this heading"></a></h3>
+<p>Lijst van ROS2 topics:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">topic</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>Afdrukken van de data van een topic:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">topic</span> <span class="n">echo</span> <span class="o">/</span><span class="n">chatter</span>
+</pre></div>
+</div>
+<p>Informatie over een topic:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">topic</span> <span class="n">info</span> <span class="o">/</span><span class="n">chatter</span>
+</pre></div>
+</div>
+<p>Edit talker code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gedit</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ros</span><span class="o">/</span><span class="n">jazzy</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">launch_testing_ros</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">talker</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="listener">
+<h2>Listener<a class="headerlink" href="#listener" title="Link to this heading"></a></h2>
+<p>Start een listener node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">run</span> <span class="n">demo_nodes_py</span> <span class="n">listener</span>
+</pre></div>
+</div>
+<p>Node list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">node</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>Topic list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">topic</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</section>
+<section id="demo-sensor-publisher">
+<h2>Demo Sensor publisher<a class="headerlink" href="#demo-sensor-publisher" title="Link to this heading"></a></h2>
+<p>Start een sensor info publisher node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">run</span> <span class="n">range_sensor</span> <span class="n">sensor_info_publisher_simulation</span> 
+</pre></div>
+</div>
+<p>Topic list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">topic</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>Topic echo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">topic</span> <span class="n">echo</span> <span class="o">/</span><span class="n">range_sensor_info</span>
+</pre></div>
+</div>
+<p>Topic info:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">topic</span> <span class="n">info</span> <span class="o">/</span><span class="n">range_sensor_info</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="interfaces">
+<h1>Interfaces<a class="headerlink" href="#interfaces" title="Link to this heading"></a></h1>
+<p>Start een sensor info publisher node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">run</span> <span class="n">range_sensor</span> <span class="n">sensor_info_publisher_simulation</span> 
+</pre></div>
+</div>
+<p>Topic list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">topic</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>Topic echo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">topic</span> <span class="n">echo</span> <span class="o">/</span><span class="n">range_sensor_info</span>
+</pre></div>
+</div>
+<p>Message type info:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">interface</span> <span class="n">show</span> <span class="n">range_sensor_msgs</span><span class="o">/</span><span class="n">RangeSensorInfo</span>
+</pre></div>
+</div>
+<p>Interface list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">interface</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>Interface list met filter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">interface</span> <span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">Range</span>
+</pre></div>
+</div>
+<p>Interface show:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">interface</span> <span class="n">show</span> <span class="n">sensor_msgs</span><span class="o">/</span><span class="n">Range</span>
+</pre></div>
+</div>
+</section>
+<section id="services">
+<h1>Services<a class="headerlink" href="#services" title="Link to this heading"></a></h1>
+<p>Start add two ints service server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">run</span> <span class="n">demo_nodes_py</span> <span class="n">add_two_ints_server</span>
+</pre></div>
+</div>
+<p>Edit add two ints server code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gedit</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ros</span><span class="o">/</span><span class="n">jazzy</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">launch_testing_ros</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">add_two_ints_server</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Vraag een lijst van services op:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">service</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>Vraag informatie op over een service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">service</span> <span class="n">info</span> <span class="o">/</span><span class="n">add_two_ints</span>
+</pre></div>
+</div>
+<p>Vraag informatie op over een service interface:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">interface</span> <span class="n">show</span> <span class="n">example_interfaces</span><span class="o">/</span><span class="n">srv</span><span class="o">/</span><span class="n">AddTwoInts</span>
+</pre></div>
+</div>
+<p>Roep de service aan vanaf de command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">service</span> <span class="n">call</span> <span class="o">/</span><span class="n">add_two_ints</span> <span class="n">example_interfaces</span><span class="o">/</span><span class="n">srv</span><span class="o">/</span><span class="n">AddTwoInts</span> <span class="s2">&quot;{a: 1, b: 2}&quot;</span>
+</pre></div>
+</div>
+<p>Edit add two ints client code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gedit</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ros</span><span class="o">/</span><span class="n">jazzy</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">launch_testing_ros</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">add_two_ints_client</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Roep de service aan vanaf een node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">run</span> <span class="n">demo_nodes_py</span> <span class="n">add_two_ints_client</span>
+</pre></div>
+</div>
+</section>
+<section id="action-servers">
+<h1>Action Servers<a class="headerlink" href="#action-servers" title="Link to this heading"></a></h1>
+<p>On request</p>
+</section>
+<section id="launch-files">
+<h1>Launch Files<a class="headerlink" href="#launch-files" title="Link to this heading"></a></h1>
+<p>On request</p>
+<p><strong>Under Construction</strong></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="uitwerkingen.html" class="btn btn-neutral float-left" title="Uitwerkingen van de opdrachten" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="manipulation.html" class="btn btn-neutral float-right" title="Manipulation" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

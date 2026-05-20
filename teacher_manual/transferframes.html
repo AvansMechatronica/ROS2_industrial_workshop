@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transferframes &mdash; Avans: ROS2 Industrial 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Navigation" href="navigation.html" />
+    <link rel="prev" title="URDF" href="urdf.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: ROS2 Industrial
+              <img src="../_static/avans-hogeschool.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../general/general.html">Algemene informatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_basics/basics.html">ROS2 Basics Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_urdf/urdf.html">ROS2 URDF Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_manipulation/manipulation.html">ROS2 Manipulation Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_transferframes/transferframes.html">ROS2 Transferframes Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">Veel gestelde vragen (FAQ)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="teacher_manual.html">Docenten Handleiding</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Inleiding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uitwerkingen.html">Uitwerkingen van de opdrachten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">ROS Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#ros-topics">ROS Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#interfaces">Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#services">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#action-servers">Action Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#launch-files">Launch Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation.html">Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urdf.html">URDF</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Transferframes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#demo-van-transferframes">Demo van transferframes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#view-frames">view_frames</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#demo-van-maken-foto-met-logic-camera">Demo van maken foto met logic-camera</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">view_frames</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tonen-van-specefiek-transfer-in-terminal">Tonen van specefiek transfer in terminal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="navigation.html">Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cases.html">Cases</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: ROS2 Industrial</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="teacher_manual.html">Docenten Handleiding</a></li>
+      <li class="breadcrumb-item active">Transferframes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/teacher_manual/transferframes.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="transferframes">
+<h1>Transferframes<a class="headerlink" href="#transferframes" title="Link to this heading"></a></h1>
+<section id="demo-van-transferframes">
+<h2>Demo van transferframes<a class="headerlink" href="#demo-van-transferframes" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>manipulation<span class="w"> </span>environment_w_gazebo.launch.py
+</pre></div>
+</div>
+<p>Enable TF in RVIZ.</p>
+<p>Disable RobotModel &amp; MotionPlanning in RVIZ om de transferframes goed zichtbaar te maken.(doe dat bijvoorbeeld tijdens een beweging van de robot)</p>
+<section id="view-frames">
+<h3>view_frames<a class="headerlink" href="#view-frames" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>tf2_tools<span class="w"> </span>view_frames
+</pre></div>
+</div>
+</section>
+</section>
+<section id="demo-van-maken-foto-met-logic-camera">
+<h2>Demo van maken foto met logic-camera<a class="headerlink" href="#demo-van-maken-foto-met-logic-camera" title="Link to this heading"></a></h2>
+<p>Open de environment met daarin een logic-camera.(in nieuwe terminal)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>transferframes<span class="w"> </span>environment.launch.py
+</pre></div>
+</div>
+<p>Spawn objecten op de tafel(in nieuwe terminal)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>transferframes<span class="w"> </span>spawn_part_random.launch.py
+</pre></div>
+</div>
+<p>of</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>transferframes<span class="w"> </span>spawn_parts.launch.py
+</pre></div>
+</div>
+<p>Neem foto(in nieuwe terminal)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>ros_industrial_sensors<span class="w"> </span>take_photo.py
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>In een virtuele omgeving moet je soms 2 keer een foto nemen om de TF-frams van de gedetecteerde objecten te zien verschijnen in RVIZ.</p>
+</div>
+<p>Toon de namen van de frames door in RVIZ bij TF de optie “Show Names” aan te zetten.</p>
+<section id="id1">
+<h3>view_frames<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>tf2_tools<span class="w"> </span>view_frames
+</pre></div>
+</div>
+<p>Er wordt een PDF gegenereerd met daarin een overzicht van alle frames en hun onderlinge relaties. In deze PDF kun je de frames van de gedetecteerde objecten terugvinden, evenals hun relatie tot andere frames in het systeem. De pdf staat in de map waar je het commando hebt uitgevoerd.</p>
+</section>
+<section id="tonen-van-specefiek-transfer-in-terminal">
+<h3>Tonen van specefiek transfer in terminal<a class="headerlink" href="#tonen-van-specefiek-transfer-in-terminal" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> </span>tf2_echo<span class="w"> </span>base_link<span class="w"> </span>tool_link
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>Helaas zie ik de frames van de objecten niet verschijnen in tf2_echo. Ik vermoed dat dit komt doordat deze frames alleen zichtbaar zijn in RVIZ en niet in de terminal. Onduidelijk waarom dit het geval is, aangezien de frames wel zichtbaar zijn in RVIZ. Mogelijk heeft dit te maken met de manier waarop de frames worden gepubliceerd of gefilterd in de terminal.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="urdf.html" class="btn btn-neutral float-left" title="URDF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="navigation.html" class="btn btn-neutral float-right" title="Navigation" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

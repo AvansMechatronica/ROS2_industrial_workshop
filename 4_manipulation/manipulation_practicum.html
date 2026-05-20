@@ -1,0 +1,170 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practicum Manipulatie &mdash; Avans: ROS2 Industrial 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="ROS2 Transferframes Workshop" href="../5_transferframes/transferframes.html" />
+    <link rel="prev" title="ROS2 industrial manipulation Pick and Drop" href="manipulation_pick_n_drop.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Avans: ROS2 Industrial
+              <img src="../_static/avans-hogeschool.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../general/general.html">Algemene informatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_basics/basics.html">ROS2 Basics Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_urdf/urdf.html">ROS2 URDF Workshop</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="manipulation.html">ROS2 Manipulation Workshop</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="manipulation_config.html">ROS2 industrial manipulation setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation_planning.html">ROS2 industrial manipulation Planning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation_pick_n_drop.html">ROS2 industrial manipulation Pick and Drop</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Practicum Manipulatie</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-1-installeren-van-de-robotarm">Opdracht 1: Installeren van de robotarm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-2-toevoegen-van-een-robot-pose">Opdracht 2: Toevoegen van een robot pose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-3-aansturen-van-de-robotarm-met-python">Opdracht 3: Aansturen van de robotarm met Python`</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-4-toevoegen-van-een-object-in-de-omgeving">Opdracht 4: Toevoegen van een object in de omgeving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opdracht-5-python-beweging-met-vermijding-van-het-object">Opdracht 5: Python beweging met vermijding van het object</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../5_transferframes/transferframes.html">ROS2 Transferframes Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">Referenties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">Veel gestelde vragen (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../teacher_manual/teacher_manual.html">Docenten Handleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Avans: ROS2 Industrial</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="manipulation.html">ROS2 Manipulation Workshop</a></li>
+      <li class="breadcrumb-item active">Practicum Manipulatie</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/4_manipulation/manipulation_practicum.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="practicum-manipulatie">
+<h1>Practicum Manipulatie<a class="headerlink" href="#practicum-manipulatie" title="Link to this heading"></a></h1>
+<p>In dit practicum gaan we aan de slag met manipulatie in ROS2. We zullen een <code class="docutils literal notranslate"><span class="pre">uFactory</span> <span class="pre">Lite6</span></code> robotarm installeren en leren hoe we deze kunnen aansturen met ROS2.</p>
+<p><img alt="image" src="../_images/lite6.jpg" /></p>
+<p>De <code class="docutils literal notranslate"><span class="pre">uFactory</span> <span class="pre">Lite6</span></code> is een compacte robotarm die geschikt is voor educatieve doeleinden en lichte industriële toepassingen. Deze robotarm heeft 6 vrijheidsgraden, wat betekent dat hij in staat is om complexe bewegingen uit te voeren. In dit practicum zullen we de robotarm installeren, configureren en aansturen met ROS2.</p>
+<p>Deze robot zul je ook gebruiken bij de opdrachten in het vervolg van de module AI-Driven Robotics.</p>
+<section id="opdracht-1-installeren-van-de-robotarm">
+<h2>Opdracht 1: Installeren van de robotarm<a class="headerlink" href="#opdracht-1-installeren-van-de-robotarm" title="Link to this heading"></a></h2>
+<p>Volg de  instructies beschreven in <a class="reference external" href="https://avansmechatronica.github.io/my_ufactory_ROS2/">uFactory Template Repository</a> om de robotarm te installeren en te configureren. Zorg ervoor dat je alle stappen zorgvuldig volgt, zodat de robotarm correct is geïnstalleerd en klaar is voor gebruik.</p>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>Gebruik voor onderstaande opdrachten alleen de packages die beginnen met “my_uf”. Deze zijn specifiek voor deze workshop en bevatten de benodigde configuraties en code om de robot aan te sturen.</p>
+</div>
+</section>
+<section id="opdracht-2-toevoegen-van-een-robot-pose">
+<h2>Opdracht 2: Toevoegen van een robot pose<a class="headerlink" href="#opdracht-2-toevoegen-van-een-robot-pose" title="Link to this heading"></a></h2>
+<p>Voeg met de MoveIt setup assistant een pose toe aan de robot. Deze pose kan bijvoorbeeld een specifieke positie zijn die de robotarm moet bereiken. Gebruik de MoveIt setup assistant om deze pose te definiëren en op te slaan in de configuratie van de robot. Test vervolgens of je deze pose kunt bereiken met de robotarm door een plan te maken en uit te voeren in Rviz.</p>
+</section>
+<section id="opdracht-3-aansturen-van-de-robotarm-met-python">
+<h2>Opdracht 3: Aansturen van de robotarm met Python`<a class="headerlink" href="#opdracht-3-aansturen-van-de-robotarm-met-python" title="Link to this heading"></a></h2>
+<p>Bestudeer het Python programma in de <code class="docutils literal notranslate"><span class="pre">my_uf_demo</span></code> package. Dit programma bevat een voorbeeld van hoe je de robotarm kunt aansturen met Python. Pas dit programma aan zodat het de robotarm naar de pose beweegt die je in opdracht 2 hebt toegevoegd. Zorg ervoor dat je de juiste ROS2 commando’s gebruikt om de robotarm te bewegen en test je programma om te zien of het werkt.</p>
+</section>
+<section id="opdracht-4-toevoegen-van-een-object-in-de-omgeving">
+<h2>Opdracht 4: Toevoegen van een object in de omgeving<a class="headerlink" href="#opdracht-4-toevoegen-van-een-object-in-de-omgeving" title="Link to this heading"></a></h2>
+<p>Voeg een object toe aan de omgeving van de robotarm. Dit kun je doen door een object in RVIZ te plaatsen. Maak vervolgens een plan om de robotarm naar een positie te bewegen die dicht bij het object is, zonder het object te raken. Test je plan in RVIZ en zorg ervoor dat de robotarm veilig beweegt zonder het object te raken.
+Sla de RVIZ-configuratie op.</p>
+</section>
+<section id="opdracht-5-python-beweging-met-vermijding-van-het-object">
+<h2>Opdracht 5: Python beweging met vermijding van het object<a class="headerlink" href="#opdracht-5-python-beweging-met-vermijding-van-het-object" title="Link to this heading"></a></h2>
+<p>Pas het Python programma aan zodat de robotarm een beweging maakt naar een doelpositie, terwijl het object in de omgeving wordt vermeden. Gebruik de MoveIt planning functionaliteit om een pad te plannen dat het object ontwijkt. Test je aangepaste programma om te zien of de robotarm succesvol naar de doelpositie beweegt zonder het object te raken.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Maak 2 poses in translation en quaternion formaat die je hebt gebruikt in deze opdracht. Gebruik deze poses om de robot te bewegen om het object heen.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="manipulation_pick_n_drop.html" class="btn btn-neutral float-left" title="ROS2 industrial manipulation Pick and Drop" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="../5_transferframes/transferframes.html" class="btn btn-neutral float-right" title="ROS2 Transferframes Workshop" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Avans ATIx: Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
